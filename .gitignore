@@ -1,4 +1,32 @@
-XR Simulation/Library/
-XR Simulation/Logs/
-XR Simulation/Temp/
-XR Simulation/UserSettings/
+# Unity generated folders
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Ll]ogs/
+**/[Uu]serSettings/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+
+# Unity generated project and editor files
+*.csproj
+*.sln
+*.unityproj
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.user
+*.userprefs
+*.csproj.user
+*.suo
+*.tmp
+*.log
+
+# Editor and IDE folders
+.vs/
+.idea/

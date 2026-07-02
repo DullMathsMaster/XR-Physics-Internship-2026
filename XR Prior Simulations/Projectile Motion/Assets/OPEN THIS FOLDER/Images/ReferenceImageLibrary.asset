@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5438900029218683827
+  m_GuidHigh: 11338665651040755373
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 4658430154847225445
+      m_GuidHigh: 9171094715115790779
+    m_SerializedTextureGuid:
+      m_GuidLow: 13530051861880666310
+      m_GuidHigh: 555674972527414650
+    m_Size: {x: 0.07125864, y: 0.07}
+    m_SpecifySize: 1
+    m_Name: Castle
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4956057098627467429
+      m_GuidHigh: 12034471810995413660
+    m_SerializedTextureGuid:
+      m_GuidLow: 6067715429204040951
+      m_GuidHigh: 9982247146222056874
+    m_Size: {x: 0.15, y: 0.04334764}
+    m_SpecifySize: 1
+    m_Name: Black Canon
+    m_Texture: {fileID: 0}
