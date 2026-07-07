@@ -3879,7 +3879,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -5259,10 +5259,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 565567508366870496, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601073068950857795, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 139200558}
     - target: {fileID: 1601073068950857795, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1601073068950857795, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -5339,6 +5349,11 @@ PrefabInstance:
       propertyPath: earthHoursPerDay
       value: 1406.4
       objectReference: {fileID: 0}
+    - target: {fileID: 4072552895414208113, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
@@ -5404,7 +5419,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mercury
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1601073068950857795, guid: 83e362115e2285046a99763388928181, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
@@ -5818,6 +5834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181, type: 3}
+    - {fileID: 1601073068950857795, guid: 83e362115e2285046a99763388928181, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7130523554948940662, guid: 83e362115e2285046a99763388928181, type: 3}
     m_AddedGameObjects:
@@ -12449,6 +12466,7 @@ GameObject:
   - component: {fileID: 1284095567}
   - component: {fileID: 1284095566}
   - component: {fileID: 1284095565}
+  - component: {fileID: 1284095570}
   m_Layer: 0
   m_Name: RightHand Ray
   m_TagString: Untagged
@@ -13079,6 +13097,19 @@ MonoBehaviour:
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!114 &1284095570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284095563}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bd33c70423b1b428dd7483930a8f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportScript: {fileID: 0}
 --- !u!1 &1291950313
 GameObject:
   m_ObjectHideFlags: 0
@@ -17547,7 +17578,7 @@ MonoBehaviour:
   m_BlockedReticle: {fileID: 0}
   m_StopLineAtFirstRaycastHit: 1
   m_StopLineAtSelection: 0
-  m_SnapEndpointIfAvailable: 1
+  m_SnapEndpointIfAvailable: 0
   m_LineBendRatio: 0.5
   m_OverrideInteractorLineOrigin: 1
   m_LineOriginTransform: {fileID: 0}
@@ -21248,7 +21279,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 0}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
