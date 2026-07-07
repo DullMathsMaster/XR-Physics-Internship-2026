@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using VirtualRealityTK;
-using static DebugUIBuilder;
 
 namespace InteractionTK.Menus
 {
