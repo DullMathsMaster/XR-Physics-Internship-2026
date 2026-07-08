@@ -15860,6 +15860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earthUICanvas: {fileID: 1839829322}
   earthSeasonsCanvas: {fileID: 1291950314}
+  targetSlider: {fileID: 1737383352}
 --- !u!1 &1579242635
 GameObject:
   m_ObjectHideFlags: 0
