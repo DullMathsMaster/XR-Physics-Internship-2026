@@ -1484,6 +1484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &126795575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,6 +2965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &264567022
 GameObject:
   m_ObjectHideFlags: 0
@@ -6029,6 +6033,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &627116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7527,6 +7533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &737490391
 GameObject:
   m_ObjectHideFlags: 0
@@ -15401,6 +15409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &1462819951
 GameObject:
   m_ObjectHideFlags: 0
@@ -16778,6 +16788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &1673881628
 GameObject:
   m_ObjectHideFlags: 0
@@ -18738,6 +18750,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &1839829317
 GameObject:
   m_ObjectHideFlags: 0
@@ -18901,6 +18915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &1848928124
 GameObject:
   m_ObjectHideFlags: 0
@@ -19242,10 +19258,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Venus is the second planet from the sun, and hottest planet in our System
-    System due to its thick atmosphere. Venus spins backwards compared to the other
-    planets, and due to its slow rotation, it is always night time on one side of
-    the planet. Venus is very similar to Earth in terms of size and gravity.
+  m_text: Venus is the second planet from the sun and the hottest planet in our System
+    System due to its thick atmosphere. Venus spins backwards compared to other planets,
+    and due to its slow rotation, it is the only planet whose days longer than its
+    years. Venus is very similar to Earth in terms of size and gravity.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
