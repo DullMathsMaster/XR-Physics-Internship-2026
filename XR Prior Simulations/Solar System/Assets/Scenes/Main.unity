@@ -473,6 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 230628300}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &42877056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 1986870012}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &43364470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,6 +1354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 0}
   padding: 0.5
+  smoothSpeed: 15
 --- !u!114 &124382146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2833,6 +2836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 0}
   padding: 0.5
+  smoothSpeed: 15
 --- !u!114 &261524682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4666,6 +4670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 1584172071}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &514478293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5623,6 +5628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 960432824}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &606398941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6027,6 +6033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 0}
   padding: 0.5
+  smoothSpeed: 15
 --- !u!114 &616908232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7425,6 +7432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 0}
   padding: 0.5
+  smoothSpeed: 15
 --- !u!114 &689200996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8261,6 +8269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 967153749}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &799959419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9573,6 +9582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 655777976}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &907203621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10781,6 +10791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 598034975}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &1025441682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13303,6 +13314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 0}
   padding: 0.5
+  smoothSpeed: 15
 --- !u!114 &1291950316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15255,6 +15267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 0}
   padding: 200
+  smoothSpeed: 15
 --- !u!114 &1461994244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16655,6 +16668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 0}
   padding: 0.5
+  smoothSpeed: 15
 --- !u!114 &1659958672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18569,6 +18583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 967153760}
   padding: 0.5
+  smoothSpeed: 15
 --- !u!114 &1830738109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18734,6 +18749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 11515385}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &1839829319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19045,13 +19061,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855170920}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 1549189843}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &1855170923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20890,6 +20907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlanetSphere: {fileID: 11515385}
   padding: 1.3
+  smoothSpeed: 15
 --- !u!114 &2076754134
 MonoBehaviour:
   m_ObjectHideFlags: 0
