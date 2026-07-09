@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Hand
+  - V0
+  - V4
+  - V2
+  - V6
+  - V8
+  - V10
+  - V12
+  - redSocket
+  - blackSocket
+  - redClip
+  - blackClip
+  - redWire
+  - blackWire
+  - leftFreeWire
+  - rightFreeWire
+  - bodyFreeWire
+  - leftConductor
+  - rightConductor
+  - leftRing
+  - rightRing
+  - North
+  - South
+  - mainCoil
+  - leftDial
+  - rightDial
+  - PAUSE
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - ITKHand
+  - ITKHandIgnore
+  - MTK
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Spatial Awareness
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

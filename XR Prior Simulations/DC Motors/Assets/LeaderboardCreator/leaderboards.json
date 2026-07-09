@@ -1,0 +1,9 @@
+{
+    "leaderboards": [
+        {
+            "name": "DemoSceneLeaderboard",
+            "publicKey": "b41c5a5c8dde825ec18d80e6817de1f18b75496797b84e23642555e549237516",
+            "secretKey": "28a588d28726f0f0a3db045f4b652a0c8f49b019e7ad320402c801d43559fd8368e777337869e881e2d76491e0fcb7a0f4a3ffa618550feb2bcff3db78a7579e7c122e5fb7095696fba32738cc1bd257e5e16030a180cd6f1feec5aa1560c426ca7a2093f3f074450090cf86074c60300e0a6b45d16db449e2e2ec8ada5e46e4"
+        }
+    ]
+}
