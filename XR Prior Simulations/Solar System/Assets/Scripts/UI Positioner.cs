@@ -4,22 +4,87 @@ using UnityEngine;
 
 public class UIPositioner : MonoBehaviour
 {
-    public GameObject Planet;
-    public float PlanetRadius;
+    public GameObject PlanetSphere;
+    public float padding = 0.5f; 
+    public float smoothSpeed = 10f;
 
-    // Start is called before the first frame update
+    private RectTransform rectTransform;
+    private MeshRenderer sphereRenderer;
+    private Vector3 lastScale;
+    private bool hasSetupScale = false;
+    
+    private Coroutine smoothMoveCoroutine;
+
     void Start()
     {
-        PlanetRadius = Planet.GetComponent<PlanetController>().scaledPlanetDiameter / 2f;
-        // + new Vector3(PlanetRadius + 3f, 0f, 0f);
+        // Having other code in here was causing it to crash (interfering with the startup?)
+        rectTransform = GetComponent<RectTransform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        if (PlanetSphere == null || rectTransform == null) return;
 
-        //transform.rotation = Planet.GetComponent<PlanetController>().transform.rotation;
-        
+        if (sphereRenderer == null)
+        {
+            sphereRenderer = PlanetSphere.GetComponent<MeshRenderer>();
+            if (sphereRenderer == null) return; // Wait until it's ready
+        }
 
+        if (!hasSetupScale)
+        {
+            lastScale = PlanetSphere.transform.localScale;
+            hasSetupScale = true;
+            UpdateLabelPositionInstant();
+            return;
+        }
+
+        // Only update when the scale changes (slider movement)
+        if (PlanetSphere.transform.localScale != lastScale)
+        {
+            if (smoothMoveCoroutine != null) StopCoroutine(smoothMoveCoroutine);
+            
+            smoothMoveCoroutine = StartCoroutine(SmoothlyMoveLabel());
+            lastScale = PlanetSphere.transform.localScale; 
+        }
+    }
+
+    // Instantly places the label at startup safely
+    void UpdateLabelPositionInstant()
+    {
+        if (sphereRenderer == null || rectTransform == null || transform.parent == null) return;
+
+        float worldRadius = sphereRenderer.bounds.extents.y;
+        Vector3 worldTargetPos = PlanetSphere.transform.position + new Vector3(0f, worldRadius + padding, 0f);
+        Vector3 localTargetPos = transform.parent.InverseTransformPoint(worldTargetPos);
+
+        Vector3 newPos = rectTransform.anchoredPosition3D;
+        newPos.y = localTargetPos.y;
+        rectTransform.anchoredPosition3D = newPos;
+    }
+
+    // Isolated routine that smooths the slide only while the slider is moving
+    IEnumerator SmoothlyMoveLabel()
+    {
+        while (sphereRenderer != null && rectTransform != null && transform.parent != null)
+        {
+            float worldRadius = sphereRenderer.bounds.extents.y;
+            Vector3 worldTargetPos = PlanetSphere.transform.position + new Vector3(0f, worldRadius + padding, 0f);
+            Vector3 localTargetPos = transform.parent.InverseTransformPoint(worldTargetPos);
+
+            Vector3 currentPos = rectTransform.anchoredPosition3D;
+            
+            currentPos.y = Mathf.Lerp(currentPos.y, localTargetPos.y, Time.deltaTime * smoothSpeed);
+            rectTransform.anchoredPosition3D = currentPos;
+
+            if (Mathf.Abs(currentPos.y - localTargetPos.y) < 0.01f)
+            {
+                currentPos.y = localTargetPos.y;
+                rectTransform.anchoredPosition3D = currentPos;
+                break;
+            }
+
+            yield return null;
+        }
     }
 }
