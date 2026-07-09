@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class UIPositioner : MonoBehaviour
 {
-    [Tooltip("Drag the 'PlanetSphere' child object here")]
     public GameObject PlanetSphere;
-    
-    [Tooltip("Extra padding above the planet surface")]
     public float padding = 0.5f; 
-
-    [Tooltip("How smoothly the label slides (higher = faster snapping)")]
     public float smoothSpeed = 10f;
 
     private RectTransform rectTransform;
