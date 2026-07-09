@@ -1723,10 +1723,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Neptune is the most distant planet from the sun, and is an ice giant. It
-    has the strongest winds of any planet in the solar system, which can be over
+  m_text: Neptune is the most distant planet from the Sun and is an ice giant. It
+    has the strongest winds of any planet in the Solar System, which can be over
     1000mph! Neptune is the only planet in our Solar System not visible to the naked
-    eye, and was discovered through mathematical methods, rather than direct observation.
+    eye, and was discovered through mathematical methods rather than direct observation.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2292,10 +2292,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Saturn is the second largest planet in the solar system, and is a gas giant
+  m_text: Saturn is the second largest planet in the Solar System and is a gas giant
     like Jupiter. Saturn has the brightest and largest ring system in the solar system.
-    The rings are made of mostly small particles of ice, but there are also rock
-    and dust particles. Saturn has over 146 moons, and its largest moon, Titan, is
+    The rings are mostly made off small particles of ice, but there are also particles
+    of rock and dust. Saturn has over 146 moons, and its largest moon, Titan, is
     the only moon in the solar system to have its own substantial atmosphere.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4196,12 +4196,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Earth is the only planet in our solar system with liquid water on the surface,
+  m_text: Earth is the only planet in our Solar System with liquid water on the surface
     and is the biggest of the four rocky planets nearest the Sun. It has one natural
-    satellite, the moon, which is responsible for the tides. Humans have also launched
-    lots of artificial satellites to help us study the earth and communicate with
-    each other - can you spot one? The Earth is also tilted which causes the seasons
-    - use your control panel to find out more!
+    satellite, the Moon, which is responsible for the tides. Humans have also launched
+    many artificial satellites to help us study the Earth and communicate with each
+    other - can you spot one? The Earth is also tilted which causes the seasons -
+    use your control panel to find out more!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6110,10 +6110,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jupiter is the largest planet in the solar system. It is a gas giant -
+  m_text: Jupiter is the largest planet in the Solar System. It is a gas giant -
     mostly made of hydrogen and helium. The dark orange stripes are called belts,
     and the light bands are called zones. Can you spot the Great Red Spot? It is
-    a storm, larger than the earth, which has raged for hundreds of years!
+    a storm, larger than Earth, which has raged for hundreds of years!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12508,7 +12508,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Uranus is an ice giant made of water, ammonia and methane. The methane
     absorbs red light, but reflects blue light, which gives the planet its unique
-    colour. Uranus appears to spin sideways, or 'roll' around the sun. Uranus also
+    colour. Uranus appears to spin sideways, or 'roll' around the Sun. Uranus also
     has very faint, dark rings. Uranus is so far away that only one spacecraft has
     ever explored it up close - NASA's Voyager 2 mission.
   m_isRightToLeft: 0
@@ -19203,10 +19203,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Venus is the second planet from the sun, and hottest planet in our System
-    System due to its thick atmosphere. Venus spins backwards compared to the other
-    planets, and due to its slow rotation, it is always night time on one side of
-    the planet. Venus is very similar to Earth in terms of size and gravity.
+  m_text: Venus is the second planet from the Sun and the hottest planet in our Solar
+    System due to its thick atmosphere. Venus spins backwards compared to other planets,
+    and due to its slow rotation, it is the only planet whose day longer than its
+    year. Venus is very similar to Earth in terms of size and gravity.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20079,8 +20079,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mercury is the nearest planet to the sun and the smallest in our solar
-    system. It has a solid surface made of mostly rocks and metals, and is covered
+  m_text: Mercury is the nearest planet to the Sun and the smallest in our Solar
+    System. It has a solid surface made of mostly rocks and metals and is covered
     in huge impact craters. It is named after the Roman god Mercury, who was the
     god of travellers and messenger of the gods - probably because it moves so quickly
     through the sky!
@@ -20633,11 +20633,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mars has been given the nickname \u201CThe Red Planet\u201D because of
-    its red appearence, cause by iron oxide dust covering its surface. Mars is the
-    furthest rocky planet from the sun and is home to some huge extinct volcanoes.
-    We have sent many rovers to Mars to study its surface, such as NASA's Curiosity
-    Rover."
+  m_text: "Mars has been given the nickname the \"Red Planet\u201D because of its
+    red appearance, caused by iron oxide dust covering its surface. Mars is the furthest
+    rocky planet from the Sun and is home to some huge extinct volcanoes. We have
+    sent many rovers to Mars to study its surface, such as NASA's Curiosity Rover."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -53,9 +53,11 @@ public class UIFlipLabel : MonoBehaviour
                 float dotBack = Vector3.Dot(backFlat, toCameraFlat);
 
                 // Choose the face (forward or back) that points more toward the camera.
+                // The boolean needs to match the initial rotation so the label does not
+                // briefly snap to the wrong side after teleporting.
                 if (dotBack > dotForward)
                 {
-                    flipped = false; // we'll rotate 180 to make the back face toward camera
+                    flipped = true;
                     transform.localRotation = initialLocalRotation * Quaternion.Euler(0f, 180f, 0f);
                 }
                 else
