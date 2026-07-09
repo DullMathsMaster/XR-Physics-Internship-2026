@@ -235,6 +235,18 @@ PrefabInstance:
       addedObject: {fileID: 756280554}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4da7467773bf11428b984647c6847a8, type: 3}
+--- !u!1 &2954004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 291298640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8016605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 1443332458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &11515385 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
@@ -436,7 +448,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -593,8 +605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 326671198}
-  PlanetRadius: 0
 --- !u!1 &43364468
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,8 +755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1690885620}
-  PlanetRadius: 0
 --- !u!1 &45606567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1348,7 @@ GameObject:
   - component: {fileID: 124382146}
   - component: {fileID: 124382145}
   - component: {fileID: 124382151}
+  - component: {fileID: 124382152}
   m_Layer: 0
   m_Name: Saturn UI Canvas
   m_TagString: UIBox
@@ -1470,9 +1479,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124382144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &124382152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124382144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Planet: {fileID: 326671198}
@@ -1663,6 +1684,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &147811806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 1497327133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &156307864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2808,6 +2835,7 @@ GameObject:
   - component: {fileID: 261524682}
   - component: {fileID: 261524681}
   - component: {fileID: 261524687}
+  - component: {fileID: 261524688}
   m_Layer: 0
   m_Name: Venus UI Canvas
   m_TagString: UIBox
@@ -2938,12 +2966,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261524680}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 2117357759}
+--- !u!114 &261524688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261524680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Planet: {fileID: 2954004}
   PlanetRadius: 0
 --- !u!1 &264567022
 GameObject:
@@ -3241,10 +3281,6 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 907203625}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2117357763}
     - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       insertIndex: -1
@@ -4720,8 +4756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1680371224}
-  PlanetRadius: 0
 --- !u!1 &522414179
 GameObject:
   m_ObjectHideFlags: 0
@@ -5224,108 +5258,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5900802348454167330}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &583280013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583280008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 4
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &590687544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5427,7 +5359,7 @@ PrefabInstance:
     - target: {fileID: 4072552895414208113, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -5496,6 +5428,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1601073068950857795, guid: 83e362115e2285046a99763388928181, type: 3}
+    - {fileID: 565567508366870496, guid: 83e362115e2285046a99763388928181, type: 3}
+    - {fileID: 8700202795344449362, guid: 83e362115e2285046a99763388928181, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
@@ -5507,6 +5441,18 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 514478291}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1680371228}
+    - targetCorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1680371229}
+    - targetCorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1680371230}
     - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       insertIndex: -1
@@ -5791,8 +5737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
 --- !u!4 &615999470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
@@ -5959,6 +5903,7 @@ GameObject:
   - component: {fileID: 616908227}
   - component: {fileID: 616908231}
   - component: {fileID: 616908232}
+  - component: {fileID: 616908233}
   m_Layer: 0
   m_Name: Mars UI Canvas
   m_TagString: UIBox
@@ -6089,9 +6034,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616908224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &616908233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616908224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Planet: {fileID: 1087038}
@@ -7446,6 +7403,7 @@ GameObject:
   - component: {fileID: 689200996}
   - component: {fileID: 689200995}
   - component: {fileID: 689201001}
+  - component: {fileID: 689201002}
   m_Layer: 0
   m_Name: Uranus UI Canvas
   m_TagString: UIBox
@@ -7576,12 +7534,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689200994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1443332459}
+--- !u!114 &689201002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689200994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Planet: {fileID: 8016605}
   PlanetRadius: 0
 --- !u!1 &737490391
 GameObject:
@@ -8405,8 +8375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 799959417}
-  PlanetRadius: 0
 --- !u!1 &808897475
 GameObject:
   m_ObjectHideFlags: 0
@@ -9457,6 +9425,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873531329}
   m_CullTransparentMesh: 1
+--- !u!1 &887197246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 1690885619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &899749177
 GameObject:
   m_ObjectHideFlags: 0
@@ -9719,8 +9693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 2117357759}
-  PlanetRadius: 0
 --- !u!1 &907283202
 GameObject:
   m_ObjectHideFlags: 0
@@ -10923,8 +10895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1443332459}
-  PlanetRadius: 0
 --- !u!1 &1025610513
 GameObject:
   m_ObjectHideFlags: 0
@@ -13789,6 +13759,8 @@ GameObject:
   - component: {fileID: 1313711685}
   - component: {fileID: 1313711686}
   - component: {fileID: 1313711687}
+  - component: {fileID: 1313711689}
+  - component: {fileID: 1313711688}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -13967,6 +13939,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRadius: 490
+--- !u!136 &1313711688
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313711679}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.19
+  m_Height: 0.51
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1313711689
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313711679}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1324412547
 GameObject:
   m_ObjectHideFlags: 0
@@ -15172,12 +15194,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 598034980}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
---- !u!1 &1443332459 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-    type: 3}
-  m_PrefabInstance: {fileID: 1443332458}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1459015720
 GameObject:
   m_ObjectHideFlags: 0
@@ -15269,6 +15285,7 @@ GameObject:
   - component: {fileID: 1461994244}
   - component: {fileID: 1461994243}
   - component: {fileID: 1461994249}
+  - component: {fileID: 1461994250}
   m_Layer: 0
   m_Name: Mercury UI Canvas
   m_TagString: UIBox
@@ -15399,9 +15416,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461994242}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1461994250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461994242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Planet: {fileID: 1680371224}
@@ -15716,12 +15745,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 967153754}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
---- !u!1 &1497327134 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-    type: 3}
-  m_PrefabInstance: {fileID: 1497327133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1517785503
 GameObject:
   m_ObjectHideFlags: 0
@@ -15776,6 +15799,7 @@ GameObject:
   - component: {fileID: 1550833795}
   - component: {fileID: 1550833794}
   - component: {fileID: 1550833793}
+  - component: {fileID: 1550833796}
   m_Layer: 0
   m_Name: Seasons Button
   m_TagString: Untagged
@@ -15847,30 +15871,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1839829322}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1291950314}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1313711686}
         m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
         m_MethodName: HandleInputData
@@ -15887,6 +15887,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
         m_MethodName: set_value
         m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1550833796}
+        m_TargetAssemblyTypeName: CanvasManager, Assembly-CSharp
+        m_MethodName: ToggleCanvases
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15933,6 +15945,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550833791}
   m_CullTransparentMesh: 1
+--- !u!114 &1550833796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550833791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcaba6a46c36084d9ac979cfeb027c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  earthUICanvas: {fileID: 1839829322}
+  earthSeasonsCanvas: {fileID: 1291950314}
+  targetSlider: {fileID: 1737383352}
 --- !u!1 &1579242635
 GameObject:
   m_ObjectHideFlags: 0
@@ -16637,6 +16664,7 @@ GameObject:
   - component: {fileID: 1659958672}
   - component: {fileID: 1659958671}
   - component: {fileID: 1659958677}
+  - component: {fileID: 1659958678}
   m_Layer: 0
   m_Name: Neptune UI Canvas
   m_TagString: UIBox
@@ -16767,12 +16795,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659958670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1690885620}
+--- !u!114 &1659958678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659958670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Planet: {fileID: 887197246}
   PlanetRadius: 0
 --- !u!1 &1673881628
 GameObject:
@@ -16862,6 +16902,168 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 590687544}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1680371228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680371224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1313711686}
+        m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
+        m_MethodName: HandleInputData
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!135 &1680371229
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680371224}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1680371230
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680371224}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1690885619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17002,12 +17204,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1986870017}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
---- !u!1 &1690885620 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-    type: 3}
-  m_PrefabInstance: {fileID: 1690885619}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1700681669
 GameObject:
   m_ObjectHideFlags: 0
@@ -18430,6 +18626,7 @@ GameObject:
   - component: {fileID: 1830738109}
   - component: {fileID: 1830738108}
   - component: {fileID: 1830738114}
+  - component: {fileID: 1830738115}
   m_Layer: 0
   m_Name: Jupiter UI Canvas
   m_TagString: UIBox
@@ -18560,12 +18757,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830738107}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1497327134}
+--- !u!114 &1830738115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830738107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Planet: {fileID: 147811806}
   PlanetRadius: 0
 --- !u!1 &1839829317
 GameObject:
@@ -18582,6 +18791,7 @@ GameObject:
   - component: {fileID: 1839829319}
   - component: {fileID: 1839829318}
   - component: {fileID: 1839829324}
+  - component: {fileID: 1839829325}
   m_Layer: 0
   m_Name: Earth UI Canvas
   m_TagString: UIBox
@@ -18712,9 +18922,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839829317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1839829325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839829317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Planet: {fileID: 583280008}
@@ -19003,8 +19225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1333200300}
-  PlanetRadius: 0
 --- !u!1 &1899894306
 GameObject:
   m_ObjectHideFlags: 0
@@ -20864,8 +21084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 583280008}
-  PlanetRadius: 0
 --- !u!1 &2080754993
 GameObject:
   m_ObjectHideFlags: 0
@@ -21256,114 +21474,6 @@ Transform:
   - {fileID: 661760106}
   m_Father: {fileID: 296517538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2117357759 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-    type: 3}
-  m_PrefabInstance: {fileID: 291298640}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2117357763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117357759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 4
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &2124398258
 GameObject:
   m_ObjectHideFlags: 0
@@ -22138,10 +22248,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1462819952}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 583280013}
     - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       insertIndex: -1

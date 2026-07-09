@@ -1,25 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UILabel : MonoBehaviour
 {
-    public GameObject Planet;
-    public float PlanetRadius;
-
-    // Start is called before the first frame update
-    void Start()
+    void LateUpdate()
     {
-        PlanetRadius = Planet.GetComponent<PlanetController>().scaledPlanetDiameter / 2f;
-        // + new Vector3(PlanetRadius + 3f, 0f, 0f);
-    }
+        if (Camera.main == null)
+            return;
 
-    // Update is called once per frame
-    void Update()
-    {
+        transform.LookAt(Camera.main.transform);
 
-        //transform.rotation = Planet.GetComponent<PlanetController>().transform.rotation;
-        
-
+        // Flip because UI faces backwards
+        transform.Rotate(0f, 180f, 0f);
     }
 }
