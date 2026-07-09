@@ -4,22 +4,35 @@ using UnityEngine;
 
 public class UIPositioner : MonoBehaviour
 {
-    public GameObject Planet;
-    public float PlanetRadius;
+    [Tooltip("Drag the 'PlanetSphere' child object here")]
+    public GameObject PlanetSphere;
+    
+    [Tooltip("Extra padding above the planet surface")]
+    public float padding = 0.5f; 
 
-    // Start is called before the first frame update
+    private RectTransform rectTransform;
+    private MeshRenderer sphereRenderer;
+
     void Start()
     {
-        PlanetRadius = Planet.GetComponent<PlanetController>().scaledPlanetDiameter / 2f;
-        // + new Vector3(PlanetRadius + 3f, 0f, 0f);
+        rectTransform = GetComponent<RectTransform>();
+        if (PlanetSphere != null)
+        {
+            sphereRenderer = PlanetSphere.GetComponent<MeshRenderer>();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        if (PlanetSphere == null || rectTransform == null || sphereRenderer == null) return;
 
-        //transform.rotation = Planet.GetComponent<PlanetController>().transform.rotation;
-        
+        float worldRadius = sphereRenderer.bounds.extents.y;
 
+        Vector3 worldTargetPos = PlanetSphere.transform.position + new Vector3(0f, worldRadius + padding, 0f);
+        Vector3 localTargetPos = transform.parent.InverseTransformPoint(worldTargetPos);
+
+        Vector3 newPos = rectTransform.anchoredPosition3D;
+        newPos.y = localTargetPos.y;
+        rectTransform.anchoredPosition3D = newPos;
     }
 }

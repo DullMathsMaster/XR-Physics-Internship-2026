@@ -123,12 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1087038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-    type: 3}
-  m_PrefabInstance: {fileID: 2067402636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1261601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -472,13 +466,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42877054}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 230628300}
+  padding: 1.3
 --- !u!114 &42877056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,13 +616,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43364468}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 1986870012}
+  padding: 1.3
 --- !u!114 &43364470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,8 +1350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 0}
+  padding: 0.5
 --- !u!114 &124382146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1484,6 +1478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &126795575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,8 +2831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 0}
+  padding: 0.5
 --- !u!114 &261524682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2963,6 +2959,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &264567022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,6 +3694,7 @@ GameObject:
   - component: {fileID: 364578166}
   - component: {fileID: 364578168}
   - component: {fileID: 364578167}
+  - component: {fileID: 364578169}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -4107,12 +4106,39 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &364578169
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364578160}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &375090873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4633,13 +4659,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514478290}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1680371224}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 1584172071}
+  padding: 1.3
 --- !u!114 &514478293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5423,18 +5449,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1680371228}
-    - targetCorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1680371229}
-    - targetCorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1680371230}
     - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1584172076}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1584172082}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!1 &598034975 stripped
 GameObject:
@@ -5594,13 +5616,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606398939}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 960432824}
+  padding: 1.3
 --- !u!114 &606398941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6003,8 +6025,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 0}
+  padding: 0.5
 --- !u!114 &616908232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6029,6 +6051,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &627116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7399,8 +7423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 0}
+  padding: 0.5
 --- !u!114 &689200996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7527,6 +7551,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &737490391
 GameObject:
   m_ObjectHideFlags: 0
@@ -8228,13 +8254,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799959417}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 967153749}
+  padding: 1.3
 --- !u!114 &799959419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9540,13 +9566,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907203619}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 655777976}
+  padding: 1.3
 --- !u!114 &907203621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10503,6 +10529,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &967153760 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7931634991672266274, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 1497327133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &994395601
 GameObject:
   m_ObjectHideFlags: 0
@@ -10742,13 +10774,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025441680}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 598034975}
+  padding: 1.3
 --- !u!114 &1025441682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13269,8 +13301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 0}
+  padding: 0.5
 --- !u!114 &1291950316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13727,8 +13759,6 @@ GameObject:
   - component: {fileID: 1313711685}
   - component: {fileID: 1313711686}
   - component: {fileID: 1313711687}
-  - component: {fileID: 1313711689}
-  - component: {fileID: 1313711688}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -13907,56 +13937,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRadius: 490
---- !u!136 &1313711688
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313711679}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.19
-  m_Height: 0.51
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1313711689
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313711679}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1324412547
 GameObject:
   m_ObjectHideFlags: 0
@@ -15273,8 +15253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 0}
+  padding: 200
 --- !u!114 &1461994244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15401,6 +15381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &1462819951
 GameObject:
   m_ObjectHideFlags: 0
@@ -16142,6 +16124,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &1584172082
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584172071}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1586945601
 GameObject:
   m_ObjectHideFlags: 0
@@ -16650,8 +16653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 0}
+  padding: 0.5
 --- !u!114 &1659958672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16778,6 +16781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &1673881628
 GameObject:
   m_ObjectHideFlags: 0
@@ -16980,54 +16985,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
---- !u!135 &1680371229
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680371224}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1680371230
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680371224}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &1690885619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18605,13 +18562,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830738107}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 967153760}
+  padding: 0.5
 --- !u!114 &1830738109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18738,6 +18695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &1839829317
 GameObject:
   m_ObjectHideFlags: 0
@@ -18773,8 +18732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 11515385}
+  padding: 1.3
 --- !u!114 &1839829319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18901,6 +18860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planet: {fileID: 0}
+  PlanetRadius: 0
 --- !u!1 &1848928124
 GameObject:
   m_ObjectHideFlags: 0
@@ -19084,13 +19045,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855170920}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 1549189843}
+  padding: 1.3
 --- !u!114 &1855170923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20923,13 +20884,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076754132}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 892cac5ecbf7b0148898c2b87a42409a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
+  PlanetSphere: {fileID: 11515385}
+  padding: 1.3
 --- !u!114 &2076754134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21493,6 +21454,7 @@ GameObject:
   - component: {fileID: 2126093693}
   - component: {fileID: 2126093692}
   - component: {fileID: 2126093691}
+  - component: {fileID: 2126093695}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -21909,6 +21871,33 @@ MonoBehaviour:
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!54 &2126093695
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126093689}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2146252957
 GameObject:
   m_ObjectHideFlags: 0
