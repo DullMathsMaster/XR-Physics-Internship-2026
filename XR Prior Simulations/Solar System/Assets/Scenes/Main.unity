@@ -235,18 +235,6 @@ PrefabInstance:
       addedObject: {fileID: 756280554}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4da7467773bf11428b984647c6847a8, type: 3}
---- !u!1 &2954004 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-    type: 3}
-  m_PrefabInstance: {fileID: 291298640}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8016605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-    type: 3}
-  m_PrefabInstance: {fileID: 1443332458}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &11515385 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
@@ -448,7 +436,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1496,8 +1484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 326671198}
-  PlanetRadius: 0
 --- !u!1 &126795575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,12 +1670,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &147811806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-    type: 3}
-  m_PrefabInstance: {fileID: 1497327133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &156307864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,8 +2963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 2954004}
-  PlanetRadius: 0
 --- !u!1 &264567022
 GameObject:
   m_ObjectHideFlags: 0
@@ -6051,8 +6029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1087038}
-  PlanetRadius: 0
 --- !u!1 &627116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7551,8 +7527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 8016605}
-  PlanetRadius: 0
 --- !u!1 &737490391
 GameObject:
   m_ObjectHideFlags: 0
@@ -9425,12 +9399,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873531329}
   m_CullTransparentMesh: 1
---- !u!1 &887197246 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
-    type: 3}
-  m_PrefabInstance: {fileID: 1690885619}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &899749177
 GameObject:
   m_ObjectHideFlags: 0
@@ -15433,8 +15401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 1680371224}
-  PlanetRadius: 0
 --- !u!1 &1462819951
 GameObject:
   m_ObjectHideFlags: 0
@@ -16812,8 +16778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 887197246}
-  PlanetRadius: 0
 --- !u!1 &1673881628
 GameObject:
   m_ObjectHideFlags: 0
@@ -18774,8 +18738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 147811806}
-  PlanetRadius: 0
 --- !u!1 &1839829317
 GameObject:
   m_ObjectHideFlags: 0
@@ -18939,8 +18901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60145d457e31f46beae162db4cc3f9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 583280008}
-  PlanetRadius: 0
 --- !u!1 &1848928124
 GameObject:
   m_ObjectHideFlags: 0
