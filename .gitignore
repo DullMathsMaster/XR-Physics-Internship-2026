@@ -30,3 +30,4 @@
 # Editor and IDE folders
 .vs/
 .idea/
+*.apk
