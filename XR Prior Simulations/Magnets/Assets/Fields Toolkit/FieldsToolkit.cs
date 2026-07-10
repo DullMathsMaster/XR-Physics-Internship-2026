@@ -1,10 +1,4 @@
-using InteractionTK.Menus;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
 using UnityEngine;
-using UnityEngine.Events;
-using VirtualRealityTK;
 
 namespace FieldsToolkit
 {
@@ -15,31 +9,31 @@ namespace FieldsToolkit
         public FTK.Settings settings = FTK.Settings.defaultSettings;
         public Material fieldLineMaterial;
 
-        public void Start()
+        private void Awake()
         {
-            if (instance != null)
+            if (instance != null && instance != this)
             {
                 Debug.LogWarning("An instance of FTK already exists.");
-                Destroy(this);
+                Destroy(gameObject);
                 return;
             }
 
             instance = this;
         }
 
-        public void FixedUpdate()
-        {
-        }
-
         [RuntimeInitializeOnLoadMethod]
         private static void Initialize()
         {
-            FieldsToolkit instance = FindObjectOfType<FieldsToolkit>();
-            if (instance == null)
+            FieldsToolkit existing = FindFirstObjectByType<FieldsToolkit>();
+            if (existing == null)
             {
                 Debug.LogWarning("FTK was not found, creating a new object.");
                 GameObject o = new GameObject("Fields Toolkit");
-                FieldsToolkit.instance = o.AddComponent<FieldsToolkit>();
+                instance = o.AddComponent<FieldsToolkit>();
+            }
+            else
+            {
+                instance = existing;
             }
         }
     }
