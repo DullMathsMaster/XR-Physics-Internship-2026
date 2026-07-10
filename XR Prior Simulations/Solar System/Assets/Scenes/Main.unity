@@ -10315,8 +10315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sunObject: {fileID: 296517536}
   semiMajorAxis: 50
-  semiMinorAxis: 40
-  orbitSpeed: 3
+  semiMinorAxis: 30
+  orbitSpeed: 0.5
   inclination: 15
   rotationSpeed: 50
 --- !u!135 &952854079
@@ -10360,7 +10360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c1dc2f36f21f50f458a413de455ed0aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10389,7 +10389,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952854077}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 289301614986012343, guid: 581757df9783b49408c8651b3b07f350, type: 3}
 --- !u!4 &952854082
 Transform:
   m_ObjectHideFlags: 0
@@ -10400,7 +10400,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06717168, y: 1.3112192, z: -7.6513133}
-  m_LocalScale: {x: 0.46, y: 0.46, z: 0.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
