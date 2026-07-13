@@ -1,0 +1,2 @@
+C:\Users\user\Downloads\XR Internship\XR GAME\XR Prior Simulations\Magnets\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\user\Downloads\XR Internship\XR GAME\XR Prior Simulations\Magnets\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

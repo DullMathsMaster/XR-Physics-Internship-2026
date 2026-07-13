@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DevAgentSettings
   m_EditorClassIdentifier: 
   enabled: 1
-  serverAddress: 10.247.112.146
+  serverAddress: 10.249.10.8
   serverPort: 48735
   mcpServerPort: 48736
   witConfiguration: {fileID: 0}
