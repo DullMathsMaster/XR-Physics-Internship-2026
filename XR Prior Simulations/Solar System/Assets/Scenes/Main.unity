@@ -588,6 +588,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!1 &43364468
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +745,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!1 &45606567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1487,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &124382152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2963,6 +2981,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &261524688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4353,6 +4377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 2590.7
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &476427106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5078,6 +5108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!1 &522414179
 GameObject:
   m_ObjectHideFlags: 0
@@ -6061,6 +6097,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!4 &615999470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
@@ -6364,6 +6406,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &616908233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7865,6 +7913,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &689201002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8914,6 +8968,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!1 &808897475
 GameObject:
   m_ObjectHideFlags: 0
@@ -10433,6 +10493,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!1 &907283202
 GameObject:
   m_ObjectHideFlags: 0
@@ -11766,6 +11832,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!1 &1025610513
 GameObject:
   m_ObjectHideFlags: 0
@@ -16591,6 +16663,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &1461994250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17734,6 +17812,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &1636572265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18239,6 +18323,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &1659958678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20165,6 +20255,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &1830738115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20331,6 +20427,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!114 &1839829325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20630,6 +20732,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!1 &1886528246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
@@ -22701,6 +22809,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1a9eae9bfc72c409428ebef363fdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDistance: 50
+  normalScale: 0.05
+  minScale: 0.01
+  maxScale: 0.2
+  initialGrowthSpeed: 2
+  intermediateDampening: 1.5
 --- !u!1 &2080754993
 GameObject:
   m_ObjectHideFlags: 0
