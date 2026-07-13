@@ -17,4 +17,5 @@ libOVRLipSync.dylib filter=lfs diff=lfs merge=lfs -text
 *.msi filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
+*.apk filter=lfs diff=lfs merge=lfs -text
 XR[[:space:]]Prior[[:space:]]Simulations/DC[[:space:]]Motors/Assets/blender-4.2.22-windows-x64.msi filter=lfs diff=lfs merge=lfs -text
