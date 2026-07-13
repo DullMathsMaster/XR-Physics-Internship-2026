@@ -6,7 +6,8 @@ public class RotateSystem : MonoBehaviour
 
     void Update()
     {
-        // Specifying Space.World prevents the X/Y axes from locking up at 90 degrees
-        transform.Rotate(rotationSpeed * Time.deltaTime, Space.World);
+        float sharedScale = PlanetController.AngularVelocityScaleFactor / 500f;
+
+        transform.Rotate(rotationSpeed * sharedScale * Time.deltaTime, Space.World);
     }
 }

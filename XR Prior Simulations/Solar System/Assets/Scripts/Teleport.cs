@@ -14,6 +14,7 @@ public class Teleport : MonoBehaviour
     public GameObject SaturnSphere;
     public GameObject UranusSphere;
     public GameObject NeptuneSphere;
+    public GameObject CeresSphere;
 
     public Vector3 PlanetLocation;
     public float PlanetScale;
@@ -66,6 +67,12 @@ public class Teleport : MonoBehaviour
         {
             PlanetLocation = NeptuneSphere.transform.position;
             PlanetScale = NeptuneSphere.transform.localScale.x;
+        }
+
+        if (val == 8) //Neptune
+        {
+            PlanetLocation = CeresSphere.transform.position;
+            PlanetScale = CeresSphere.transform.localScale.x;
         }
 
         //transform.position = PlanetLocation + new Vector3(PlanetScale * 4, 0, 0);
