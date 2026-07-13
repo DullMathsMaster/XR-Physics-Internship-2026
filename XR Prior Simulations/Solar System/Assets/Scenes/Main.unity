@@ -8670,7 +8670,7 @@ PrefabInstance:
     - target: {fileID: 1301682380157097735, guid: d437ab513338cdd45b5c541c8f0cb7c9,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 54
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3661717268433751396, guid: d437ab513338cdd45b5c541c8f0cb7c9,
         type: 3}
@@ -21567,7 +21567,7 @@ PrefabInstance:
     - target: {fileID: 1301682380157097735, guid: d437ab513338cdd45b5c541c8f0cb7c9,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 46
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3661717268433751396, guid: d437ab513338cdd45b5c541c8f0cb7c9,
         type: 3}
@@ -23955,6 +23955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301682380157097735, guid: d437ab513338cdd45b5c541c8f0cb7c9,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 3661717268433751396, guid: d437ab513338cdd45b5c541c8f0cb7c9,
         type: 3}
