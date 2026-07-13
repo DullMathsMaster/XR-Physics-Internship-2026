@@ -3196,6 +3196,11 @@ PrefabInstance:
       propertyPath: earthHoursPerDay
       value: 5832
       objectReference: {fileID: 0}
+    - target: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: orbitalInclination
+      value: 3.39
+      objectReference: {fileID: 0}
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
@@ -5672,6 +5677,11 @@ PrefabInstance:
         type: 3}
       propertyPath: earthHoursPerDay
       value: 1406.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: orbitalInclination
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4072552895414208113, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -9078,6 +9088,11 @@ PrefabInstance:
         type: 3}
       propertyPath: earthHoursPerDay
       value: 10.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: orbitalInclination
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -16261,6 +16276,11 @@ PrefabInstance:
       propertyPath: earthHoursPerDay
       value: 17.233334
       objectReference: {fileID: 0}
+    - target: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: orbitalInclination
+      value: 0.77
+      objectReference: {fileID: 0}
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
@@ -16817,6 +16837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: earthHoursPerDay
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: orbitalInclination
+      value: 1.31
       objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -18487,6 +18512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: earthHoursPerDay
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: orbitalInclination
+      value: 1.77
       objectReference: {fileID: 0}
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -22426,6 +22456,11 @@ PrefabInstance:
         type: 3}
       propertyPath: earthHoursPerDay
       value: 24.616667
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: orbitalInclination
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
