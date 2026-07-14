@@ -4,6 +4,7 @@ public class PlanetController : MonoBehaviour
 {
 
     public float rotationTilt;
+    public float orbitalInclination;
     public float mass;
     public float orbitRadius = 1e8f;
     public float planetRadius = 1.0f;
@@ -64,6 +65,7 @@ public class PlanetController : MonoBehaviour
         transform.Rotate(Vector3.up, Random.Range(0f,360f));
         //Debug.Log(gameObject.name + "    Angular Velocity " + unscaledOrbitAngularVelocity.ToString() + "   Planet Diameter " + scaledPlanetDiameter.ToString() + "   Planet Orbit " + scaledOrbitRadius.ToString());
 
+        transform.Rotate(Vector3.forward, orbitalInclination);
     }
 
     // Update is called once per frame

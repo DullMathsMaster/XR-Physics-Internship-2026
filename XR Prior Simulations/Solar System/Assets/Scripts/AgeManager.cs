@@ -12,7 +12,7 @@ public class AgeManager : MonoBehaviour
 {
     public static AgeManager Instance;
 
-    public AgeGroup CurrentAge = AgeGroup.Age7to11;
+    public AgeGroup CurrentAge = AgeGroup.KS2;
 
     private void Awake()
     {
