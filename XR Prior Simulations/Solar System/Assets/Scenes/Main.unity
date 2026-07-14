@@ -370,6 +370,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &11515395
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11515385}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &33772690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3408,6 +3429,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &230628311
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230628300}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &243837185
 GameObject:
   m_ObjectHideFlags: 0
@@ -4454,7 +4496,7 @@ PrefabInstance:
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
-      value: PlanetSphere
+      value: Venus Collider
       objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -4533,6 +4575,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 655777981}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 655777987}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!1 &296517536
 GameObject:
@@ -4941,74 +4987,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &325349144
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1375737369}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: be3083a5f26d4e859d594ecbe632f87e,
-        type: 3}
-      propertyPath: m_Name
-      value: XRControllerLeft
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: be3083a5f26d4e859d594ecbe632f87e, type: 3}
 --- !u!1 &326671198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
@@ -5962,7 +5940,7 @@ PrefabInstance:
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
-      value: PlanetSphere
+      value: Ceres Collider
       objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -6046,6 +6024,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1886528248}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1886528254}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!1 &493800784
 GameObject:
@@ -6874,12 +6856,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560287669}
   m_CullTransparentMesh: 1
---- !u!4 &573780219 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be3083a5f26d4e859d594ecbe632f87e,
-    type: 3}
-  m_PrefabInstance: {fileID: 325349144}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &580987947
 GameObject:
   m_ObjectHideFlags: 0
@@ -7149,7 +7125,7 @@ PrefabInstance:
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
-      value: PlanetSphere
+      value: Mercury Collider
       objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -7238,6 +7214,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1584172082}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1584172088}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!1 &598034975 stripped
 GameObject:
@@ -7368,6 +7348,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &598034986
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598034975}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &606398939
 GameObject:
   m_ObjectHideFlags: 0
@@ -7664,6 +7665,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1333200301}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1549189849}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!4 &616668442 stripped
 Transform:
@@ -9138,6 +9143,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &655777987
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655777976}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &661760105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9924,7 +9950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ceres
+  m_text: Ceres (Dwarf Planet)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11381,7 +11407,7 @@ PrefabInstance:
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
-      value: PlanetSphere
+      value: Saturn Collider
       objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -11464,6 +11490,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 230628305}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 230628311}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!1 &829986924
 GameObject:
@@ -14048,6 +14078,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &960432831
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960432824}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &967153749 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
@@ -14177,6 +14228,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &967153760
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967153749}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &971378473
 GameObject:
   m_ObjectHideFlags: 0
@@ -19999,7 +20071,6 @@ Transform:
   - {fileID: 207147544}
   - {fileID: 1716470504}
   - {fileID: 1375737372}
-  - {fileID: 573780219}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1375737372 stripped
@@ -20543,7 +20614,7 @@ PrefabInstance:
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
-      value: PlanetSphere
+      value: Uranus Collider
       objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -20622,6 +20693,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 598034980}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 598034986}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!1 &1459015720
 GameObject:
@@ -21747,6 +21822,11 @@ PrefabInstance:
       propertyPath: orbitalInclination
       value: 1.31
       objectReference: {fileID: 0}
+    - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: m_Name
+      value: Jupiter Collider
+      objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21824,6 +21904,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 967153754}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 967153760}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!1 &1511353273
 GameObject:
@@ -22296,6 +22380,27 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 616668441}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &1549189849
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549189843}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1550833791
 GameObject:
   m_ObjectHideFlags: 0
@@ -22694,6 +22799,27 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!135 &1584172082
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584172071}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &1584172088
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23921,7 +24047,7 @@ PrefabInstance:
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
-      value: PlanetSphere
+      value: Neptune Collider
       objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -24000,6 +24126,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1986870017}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1986870023}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!1 &1691527246
 GameObject:
@@ -26723,6 +26853,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &1886528254
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886528246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1899894306
 GameObject:
   m_ObjectHideFlags: 0
@@ -28088,6 +28239,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &1986870023
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986870012}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1990640410
 GameObject:
   m_ObjectHideFlags: 0
@@ -28875,7 +29047,7 @@ PrefabInstance:
     - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_Name
-      value: PlanetSphere
+      value: Mars Collider
       objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -28954,6 +29126,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 960432825}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 960432831}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!4 &2076461259 stripped
 Transform:
@@ -31082,6 +31258,11 @@ PrefabInstance:
       propertyPath: earthHoursPerDay
       value: 24.933332
       objectReference: {fileID: 0}
+    - target: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      propertyPath: m_Name
+      value: Earth Collider
+      objectReference: {fileID: 0}
     - target: {fileID: 6441808903240557578, guid: 83e362115e2285046a99763388928181,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31188,6 +31369,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 11515390}
+    - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 11515395}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
 --- !u!1001 &6936302322210812115
 PrefabInstance:
