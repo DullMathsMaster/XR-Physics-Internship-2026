@@ -1,34 +1,47 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SeasonsButtonUI : MonoBehaviour
 {
-    [Header("Canvases")]
+    [Header("Earth Canvases")]
     public Canvas earthMainCanvas;
     public Canvas earthSeasonsCanvas;
 
-    [Header("Optional")]
+    [Header("Other Planet Main Canvases")]
     public Canvas[] otherPlanetCanvases;
+
+    [Header("Optional")]
     public Slider targetSlider;
 
-    private bool isSeasonsActive;
+    [Header("Textbox")]
+    public TextMeshProUGUI infoTextBox;
+    [TextArea] public string seasonsOnText;
+    [TextArea] public string seasonsOffText;
+
+    private bool isSeasonsActive = false;
 
     private void Start()
     {
-        ApplyState(false);
+        SetSeasonsState(false);
     }
 
     public void ToggleSeasons()
     {
-        ApplyState(!isSeasonsActive);
+        SetSeasonsState(!isSeasonsActive);
     }
 
     public void ReturnToBaseState()
     {
-        ApplyState(false);
+        SetSeasonsState(false);
     }
 
-    private void ApplyState(bool seasonsOn)
+    public bool IsSeasonsOn()
+    {
+        return isSeasonsActive;
+    }
+
+    private void SetSeasonsState(bool seasonsOn)
     {
         isSeasonsActive = seasonsOn;
 
@@ -50,16 +63,14 @@ public class SeasonsButtonUI : MonoBehaviour
         if (!seasonsOn && targetSlider != null)
             targetSlider.value = 500f;
 
+        if (infoTextBox != null)
+            infoTextBox.text = seasonsOn ? seasonsOnText : seasonsOffText;
+
         PausePlanets(seasonsOn);
     }
 
     private void PausePlanets(bool shouldPause)
     {
         Debug.Log(shouldPause ? "Planets Paused" : "Planets Resumed");
-    }
-
-    public bool IsSeasonsOn()
-    {
-        return isSeasonsActive;
     }
 }

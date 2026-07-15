@@ -1,37 +1,62 @@
 using UnityEngine;
+using TMPro;
 
 public class InfoButtonUI : MonoBehaviour
 {
-    [Header("All Planet Canvases")]
-    [Tooltip("Drag the main info canvases for ALL your planets here")]
+    [Header("All 7 Main Planet Canvases")]
     public Canvas[] allPlanetCanvases;
 
-    [Header("Seasons Button Reference")]
-    [Tooltip("Drag the Seasons Button object here so we can read its state")]
+    [Header("Seasons Reference")]
     public SeasonsButtonUI seasonsButton;
+
+    [Header("Textbox")]
+    public TextMeshProUGUI infoTextBox;
+    [TextArea] public string infoShownText;
+    [TextArea] public string infoHiddenText;
 
     public void ToggleInformation()
     {
-        // 1. If seasons is currently ON, return to base state (main canvases ON)
         if (seasonsButton != null && seasonsButton.IsSeasonsOn())
         {
             seasonsButton.ReturnToBaseState();
+
+            if (infoTextBox != null)
+                infoTextBox.text = infoHiddenText;
             return;
         }
 
-        // 2. If seasons is NOT on, toggle the main canvases normally
-        if (allPlanetCanvases != null && allPlanetCanvases.Length > 0)
-        {
-            bool currentStatus = allPlanetCanvases[0].enabled;
-            bool targetStatus = !currentStatus;
+        bool currentState = GetCurrentCanvasState();
+        bool newState = !currentState;
 
-            foreach (Canvas canvas in allPlanetCanvases)
-            {
-                if (canvas != null)
-                {
-                    canvas.enabled = targetStatus;
-                }
-            }
+        SetAllPlanetCanvases(newState);
+
+        if (infoTextBox != null)
+            infoTextBox.text = newState ? infoShownText : infoHiddenText;
+    }
+
+    private bool GetCurrentCanvasState()
+    {
+        if (allPlanetCanvases == null)
+            return false;
+
+        foreach (Canvas canvas in allPlanetCanvases)
+        {
+            if (canvas != null)
+                return canvas.enabled;
+        }
+
+        return false;
+    }
+
+    private void SetAllPlanetCanvases(bool state)
+    {
+        if (allPlanetCanvases == null)
+            return;
+
+        foreach (Canvas canvas in allPlanetCanvases)
+        {
+            if (canvas != null)
+                canvas.enabled = state;
         }
     }
 }

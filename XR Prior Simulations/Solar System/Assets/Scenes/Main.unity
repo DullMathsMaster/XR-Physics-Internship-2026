@@ -797,6 +797,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allPlanetCanvases: []
   seasonsButton: {fileID: 0}
+  infoTextBox: {fileID: 0}
+  infoShownText: Planet information is now visible.
+  infoHiddenText: Planet information is now hidden.
 --- !u!4 &45606569
 Transform:
   m_ObjectHideFlags: 0
@@ -1107,6 +1110,9 @@ MonoBehaviour:
   - {fileID: 689200999}
   - {fileID: 1659958675}
   seasonsButton: {fileID: 1550833796}
+  infoTextBox: {fileID: 0}
+  infoShownText: Planet information is now visible.
+  infoHiddenText: Planet information is now hidden.
 --- !u!1 &79135408
 GameObject:
   m_ObjectHideFlags: 0
@@ -10902,7 +10908,13 @@ MonoBehaviour:
   - {fileID: 124382149}
   - {fileID: 689200999}
   - {fileID: 1659958675}
+  - {fileID: 1636572269}
   seasonsButton: {fileID: 1044696834}
+  infoTextBox: {fileID: 971378475}
+  infoShownText: 'Planet Info
+
+    ON'
+  infoHiddenText: "Planet Info \nOFF"
 --- !u!114 &787509171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10947,7 +10959,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 45606568}
+      - m_Target: {fileID: 787509170}
         m_TargetAssemblyTypeName: InfoButtonUI, Assembly-CSharp
         m_MethodName: ToggleInformation
         m_Mode: 1
@@ -12635,7 +12647,7 @@ PrefabInstance:
     - target: {fileID: 7158862665145604057, guid: f1b1c33ef22cc7d4999174f825bb0a23,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.7
+      value: -43
       objectReference: {fileID: 0}
     - target: {fileID: 7158862665145604057, guid: f1b1c33ef22cc7d4999174f825bb0a23,
         type: 3}
@@ -13790,11 +13802,6 @@ PrefabInstance:
       propertyPath: m_DebounceTime
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 6397299583031462443, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
-        type: 3}
-      propertyPath: m_EnableTurnAround
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -14325,7 +14332,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Information On/Off
+  m_text: 'Planet Info
+
+    ON'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14879,6 +14888,9 @@ MonoBehaviour:
   - {fileID: 1659958675}
   - {fileID: 1636572269}
   targetSlider: {fileID: 1530116340}
+  infoTextBox: {fileID: 2120219515}
+  seasonsOnText: Exit Earth Seasons
+  seasonsOffText: Learn About Earth Seasons
 --- !u!114 &1044696835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22602,6 +22614,9 @@ MonoBehaviour:
   - {fileID: 689200999}
   - {fileID: 1659958675}
   targetSlider: {fileID: 1737383352}
+  infoTextBox: {fileID: 0}
+  seasonsOnText: Earth seasons view is now open.
+  seasonsOffText: Returned to the main planet information view.
 --- !u!1 &1579242635
 GameObject:
   m_ObjectHideFlags: 0
@@ -29844,7 +29859,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Learn about the seasons
+  m_text: Learn About Earth Seasons
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
