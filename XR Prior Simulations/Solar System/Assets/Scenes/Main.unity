@@ -2284,12 +2284,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137581950}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 11515386}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &137581952
 MonoBehaviour:
@@ -2303,7 +2303,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28d72c26db4e764984bf7d9a7164f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.6
+  selectedOrbit: 1
+  globalRadius: 0.8
+  satellitePivot: {fileID: 845719448}
+  satelliteModel: {fileID: 207147541}
+  earthModel: {fileID: 11515386}
+  equatorialMaterial: {fileID: 2100000, guid: 510180e3020db244ebebc828f7a1fbca, type: 2}
+  polarMaterial: {fileID: 2100000, guid: bc20c401352905348afdc93d7e0fadb7, type: 2}
+  inclinedMaterial: {fileID: 2100000, guid: f9d9c9a4b1cc27d4da98405d92e90e71, type: 2}
+  retrogradeMaterial: {fileID: 2100000, guid: d96a3575997c18e4bbd3fe1e45b4f10d, type: 2}
+  stationaryMaterial: {fileID: 2100000, guid: af88f69d6864e2b4e94c2565cf802c7d, type: 2}
+  lineWidth: 0.01
   segments: 50
 --- !u!120 &137581953
 LineRenderer:
@@ -2326,7 +2336,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f7804b0b3784fa943a415ff6cf3e57f7, type: 2}
+  - {fileID: 2100000, guid: bc20c401352905348afdc93d7e0fadb7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2348,8 +2358,57 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 0.8}
+  - {x: 0.100266576, y: 0, z: 0.7936918}
+  - {x: 0.1989519, y: 0, z: 0.7748665}
+  - {x: 0.29449964, y: 0, z: 0.7438212}
+  - {x: 0.38540298, y: 0, z: 0.70104533}
+  - {x: 0.4702282, y: 0, z: 0.64721364}
+  - {x: 0.5476377, y: 0, z: 0.5831749}
+  - {x: 0.6164106, y: 0, z: 0.5099392}
+  - {x: 0.67546237, y: 0, z: 0.4286614}
+  - {x: 0.7238617, y: 0, z: 0.34062335}
+  - {x: 0.76084524, y: 0, z: 0.24721359}
+  - {x: 0.7858298, y: 0, z: 0.14990507}
+  - {x: 0.7984214, y: 0, z: 0.050232496}
+  - {x: 0.7984214, y: 0, z: -0.05023228}
+  - {x: 0.78582984, y: 0, z: -0.14990488}
+  - {x: 0.7608453, y: 0, z: -0.24721336}
+  - {x: 0.7238618, y: 0, z: -0.34062317}
+  - {x: 0.6754625, y: 0, z: -0.4286612}
+  - {x: 0.6164109, y: 0, z: -0.5099389}
+  - {x: 0.54763794, y: 0, z: -0.58317465}
+  - {x: 0.47022864, y: 0, z: -0.6472133}
+  - {x: 0.38540336, y: 0, z: -0.70104516}
+  - {x: 0.29450005, y: 0, z: -0.7438211}
+  - {x: 0.19895248, y: 0, z: -0.7748664}
+  - {x: 0.10026713, y: 0, z: -0.7936917}
+  - {x: 0.00000069300125, y: 0, z: -0.8}
+  - {x: -0.10026594, y: 0, z: -0.7936918}
+  - {x: -0.19895114, y: 0, z: -0.77486676}
+  - {x: -0.29449895, y: 0, z: -0.7438215}
+  - {x: -0.38540214, y: 0, z: -0.7010458}
+  - {x: -0.47022748, y: 0, z: -0.6472141}
+  - {x: -0.5476371, y: 0, z: -0.5831755}
+  - {x: -0.61640996, y: 0, z: -0.50993997}
+  - {x: -0.6754618, y: 0, z: -0.4286622}
+  - {x: -0.7238613, y: 0, z: -0.34062424}
+  - {x: -0.7608449, y: 0, z: -0.24721478}
+  - {x: -0.7858296, y: 0, z: -0.14990623}
+  - {x: -0.7984213, y: 0, z: -0.05023357}
+  - {x: -0.79842144, y: 0, z: 0.050231684}
+  - {x: -0.78582996, y: 0, z: 0.14990437}
+  - {x: -0.7608453, y: 0, z: 0.24721335}
+  - {x: -0.72386175, y: 0, z: 0.34062323}
+  - {x: -0.6754624, y: 0, z: 0.42866132}
+  - {x: -0.61641043, y: 0, z: 0.5099394}
+  - {x: -0.54763746, y: 0, z: 0.5831751}
+  - {x: -0.47022796, y: 0, z: 0.6472138}
+  - {x: -0.3854023, y: 0, z: 0.7010457}
+  - {x: -0.29449892, y: 0, z: 0.7438215}
+  - {x: -0.19895111, y: 0, z: 0.77486676}
+  - {x: -0.10026535, y: 0, z: 0.79369193}
+  - {x: 0.0000012842856, y: 0, z: 0.8}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.01
@@ -2358,6 +2417,15 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
         value: 1
         inSlope: 0
         outSlope: 0
@@ -2406,8 +2474,8 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
-  m_Loop: 0
+  m_UseWorldSpace: 0
+  m_Loop: 1
   m_ApplyActiveColorSpace: 1
 --- !u!4 &137988740 stripped
 Transform:
@@ -3163,7 +3231,7 @@ Transform:
   m_GameObject: {fileID: 714732958}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0, z: 0}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -12475,13 +12543,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028136712}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 207147541}
-  m_Father: {fileID: 11515386}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &845719449
 MonoBehaviour:
@@ -12495,7 +12563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b122ea3d9893e4a499364c2184fcf000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbitalSpeed: 60
+  standardOrbitalSpeed: 30
+  orbitCustomizer: {fileID: 137581952}
+  earthModel: {fileID: 11515386}
 --- !u!1 &849069649
 GameObject:
   m_ObjectHideFlags: 0
@@ -31703,14 +31773,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1462819952}
-    - targetCorrespondingSourceObject: {fileID: 7931634991672266274, guid: 83e362115e2285046a99763388928181,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 137581951}
-    - targetCorrespondingSourceObject: {fileID: 7931634991672266274, guid: 83e362115e2285046a99763388928181,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 845719448}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
         type: 3}
@@ -31823,3 +31885,5 @@ SceneRoots:
   - {fileID: 33772690}
   - {fileID: 1375737369}
   - {fileID: 952854082}
+  - {fileID: 137581951}
+  - {fileID: 845719448}
