@@ -93,8 +93,11 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
 
         if (satellitePivot != null && satelliteModel != null)
         {
-            satellitePivot.localEulerAngles = tilt;
-            satelliteModel.localPosition = new Vector3(globalRadius, 0f, 0f); 
+            // FIX 1: Set this to zero! The pivot inherits the parent's tilt automatically.
+            satellitePivot.localEulerAngles = Vector3.zero;
+            
+            // FIX 2: Ensure this starts on the Z-axis to align with the LineRenderer start point.
+            satelliteModel.localPosition = new Vector3(0f, 0f, globalRadius); 
         }
     }
 

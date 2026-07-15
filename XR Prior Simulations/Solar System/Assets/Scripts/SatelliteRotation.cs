@@ -28,17 +28,4 @@ public class SatelliteRotation : MonoBehaviour
             transform.Rotate(Vector3.up, standardOrbitalSpeed * Time.deltaTime);
         }
     }
-
-    void LateUpdate()
-{
-    // Instead of locking the whole rotation to zero, 
-    // we only cancel out the roll/tilt from the parent Earth
-    if (transform.parent != null)
-    {
-        Vector3 parentRot = transform.parent.eulerAngles;
-        // This keeps our local Y rotation (the orbital spin) working, 
-        // while counter-acting the parent Earth's rotation!
-        transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y - parentRot.y, 0);
-    }
 }
-    }
