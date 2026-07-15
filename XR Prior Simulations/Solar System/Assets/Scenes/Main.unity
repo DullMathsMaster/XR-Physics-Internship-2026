@@ -14918,9 +14918,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922244284}
+      - m_Target: {fileID: 1922244295}
         m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: HandleInputData
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
