@@ -18,8 +18,18 @@ public class SunController2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //scaledSunDiameter = sunRadius * sunScaleFactor * 2;
-        //sunObject.transform.localScale = new Vector3(scaledSunDiameter, scaledSunDiameter, scaledSunDiameter);
+        // Start the Sun in model scale
+        sunScaleFactor = 5e-6f;
+
+        scaledSunDiameter =
+            sunRadius * sunScaleFactor * 2f;
+
+        sunObject.transform.localScale =
+            new Vector3(
+                scaledSunDiameter,
+                scaledSunDiameter,
+                scaledSunDiameter
+            );
     }
 
     // Update is called once per frame
@@ -31,24 +41,30 @@ public class SunController2 : MonoBehaviour
     }
 
     //Calculate Motion Variables
-    private void CalculateSunMotionVariables()
+    public void SetScaleFactor(float sliderValue)
     {
-        //force = G*orbitingObject.GetComponent<SunController>().mass * (mass) / (orbitRadius * orbitRadius);
-        //linearVelocity = Mathf.Sqrt(force * orbitRadius/mass);
-        //linearVelocity = Mathf.Sqrt(G * orbitingObject.GetComponent<SunController>().mass / orbitRadius) * AngularVelocityScaleFactor;
-    }
+        const float trueScale = 1e-7f;
+        const float modelPlanetScale = 1e-4f;
+        const float modelSunScale = 5e-6f;
 
-    //Calculate Scaled Variables
-    private void CalculateSunScaledVariables()
-    {
-        //scaledOrbitRadius = orbitRadius * orbitScaleFactor;
-        //scaledSunRadius = sunRadius * sunScaleFactor;
-        //sunColliderRadius = sunObject.GetComponent<SphereCollider>().radius;
-        //scaledSunMass = orbitingObject.GetComponent<SunController>().mass * massScaleFactor;
-    }
+        // Convert the slider's scale range into progress from 0 to 1
+        float progress = Mathf.InverseLerp(
+            trueScale,
+            modelPlanetScale,
+            sliderValue
+        );
 
-    public void SetScaleFactor(float valueonslider)
-    {
-        sunScaleFactor = Mathf.Abs((5e-6f - 10e-7f)/(1e-4f - 1e-7f))*valueonslider;
+        // At true scale: 1e-7
+        // At model scale: 5e-6
+        sunScaleFactor = Mathf.Lerp(
+            trueScale,
+            modelSunScale,
+            progress
+        );
+
+        Debug.Log(
+            "Sun slider value: " + sliderValue +
+            " Sun scale factor: " + sunScaleFactor
+        );
     }
 }
