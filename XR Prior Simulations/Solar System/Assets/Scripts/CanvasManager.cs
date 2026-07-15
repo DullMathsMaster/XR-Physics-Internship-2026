@@ -6,111 +6,60 @@ public class SeasonsButtonUI : MonoBehaviour
     [Header("Canvases")]
     public Canvas earthMainCanvas;
     public Canvas earthSeasonsCanvas;
-    public Canvas[] otherPlanetCanvases;
 
-    [Header("Slider")]
+    [Header("Optional")]
+    public Canvas[] otherPlanetCanvases;
     public Slider targetSlider;
 
-    private bool isSeasonsActive = false;
+    private bool isSeasonsActive;
 
-    // Check if seasons is active
-    public bool IsSeasonsOn()
+    private void Start()
     {
-        return isSeasonsActive;
+        ApplyState(false);
     }
 
     public void ToggleSeasons()
     {
-        if (isSeasonsActive)
-        {
-            if (earthMainCanvas != null && earthMainCanvas.enabled)
-            {
-                ReturnToBaseState();
-            }
-            else
-            {
-                ReturnToBaseStateNoTextBoxes();
-            }
-            return;
-        }
-
-        isSeasonsActive = true;
-        PausePlanets(true);
-
-        if (earthSeasonsCanvas != null)
-        {
-            earthSeasonsCanvas.enabled = true;
-        }
-
-        if (earthMainCanvas != null && !earthMainCanvas.enabled)
-        {
-            SetAllOtherCanvases(false);
-        }
+        ApplyState(!isSeasonsActive);
     }
 
     public void ReturnToBaseState()
     {
-        isSeasonsActive = false;
-        PausePlanets(false);
-
-        if (earthSeasonsCanvas != null)
-        {
-            earthSeasonsCanvas.enabled = false;
-        }
-
-        if (targetSlider != null)
-        {
-            targetSlider.value = 500f;
-        }
-
-        // Turn all main planet canvases ON
-        if (earthMainCanvas != null)
-        {
-            earthMainCanvas.enabled = true;
-        }
-        SetAllOtherCanvases(true);
+        ApplyState(false);
     }
 
-    // ALTERNATIVE BASE STATE: Planets moving, all text boxes OFF, seasons OFF
-    private void ReturnToBaseStateNoTextBoxes()
+    private void ApplyState(bool seasonsOn)
     {
-        isSeasonsActive = false;
-        PausePlanets(false);
+        isSeasonsActive = seasonsOn;
+
+        if (earthMainCanvas != null)
+            earthMainCanvas.enabled = !seasonsOn;
 
         if (earthSeasonsCanvas != null)
-        {
-            earthSeasonsCanvas.enabled = false;
-        }
+            earthSeasonsCanvas.enabled = seasonsOn;
 
-        if (targetSlider != null)
-        {
-            targetSlider.value = 500f;
-        }
-
-        // Turn all main planet canvases OFF
-        if (earthMainCanvas != null)
-        {
-            earthMainCanvas.enabled = false;
-        }
-        SetAllOtherCanvases(false);
-    }
-
-    private void SetAllOtherCanvases(bool state)
-    {
         if (otherPlanetCanvases != null)
         {
             foreach (Canvas canvas in otherPlanetCanvases)
             {
                 if (canvas != null)
-                {
-                    canvas.enabled = state;
-                }
+                    canvas.enabled = !seasonsOn;
             }
         }
+
+        if (!seasonsOn && targetSlider != null)
+            targetSlider.value = 500f;
+
+        PausePlanets(seasonsOn);
     }
 
     private void PausePlanets(bool shouldPause)
     {
         Debug.Log(shouldPause ? "Planets Paused" : "Planets Resumed");
+    }
+
+    public bool IsSeasonsOn()
+    {
+        return isSeasonsActive;
     }
 }

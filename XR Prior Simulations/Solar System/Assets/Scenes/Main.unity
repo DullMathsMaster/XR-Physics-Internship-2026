@@ -14877,6 +14877,7 @@ MonoBehaviour:
   - {fileID: 124382149}
   - {fileID: 689200999}
   - {fileID: 1659958675}
+  - {fileID: 1636572269}
   targetSlider: {fileID: 1530116340}
 --- !u!114 &1044696835
 MonoBehaviour:
@@ -14922,7 +14923,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1313711686}
+      - m_Target: {fileID: 1922244295}
         m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
         m_MethodName: HandleInputData
         m_Mode: 3
@@ -24622,6 +24623,8 @@ MonoBehaviour:
     - m_Text: Uranus
       m_Image: {fileID: 0}
     - m_Text: Neptune
+      m_Image: {fileID: 0}
+    - m_Text: Ceres
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
