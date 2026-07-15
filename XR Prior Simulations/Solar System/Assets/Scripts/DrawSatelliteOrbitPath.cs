@@ -3,53 +3,107 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class DrawSatelliteOrbitPath : MonoBehaviour
 {
-    [Header("Orbit Setup")]
-    public float radius = 3.0f; // Must match the satellite's position offset!
-    [Range(10, 100)] public int segments = 50; // How smooth the circle is
+    public enum OrbitType { Equatorial, Polar, Inclined, Retrograde, Stationary }
+
+    [Header("Select Orbit Type")]
+    public OrbitType selectedOrbit;
+
+    [Header("Global Radius (Same for all)")]
+    public float globalRadius = 4.0f;
+
+    [Header("References")]
+    public Transform satellitePivot;
+    public Transform satelliteModel;
+    
+    [Tooltip("Drag your Earth model here so we can match its rotation speed")]
+    public Transform earthModel; 
+
+    [Header("Materials (Colour Coding)")]
+    public Material equatorialMaterial;
+    public Material polarMaterial;
+    public Material inclinedMaterial;
+    public Material retrogradeMaterial;
+    public Material stationaryMaterial;
+
+    [Header("Line Settings")]
+    [Range(0.005f, 0.1f)] public float lineWidth = 0.015f;
+    [Range(10, 100)] public int segments = 60;
 
     private LineRenderer line;
 
     void Awake()
     {
-        // Get the LineRenderer component on this object
         line = GetComponent<LineRenderer>();
-
-        // Set the number of points (extra +1 to close the loop)
-        line.positionCount = segments + 1;
-        
-        // Loop the line so the end connects to the start
-        line.useWorldSpace = false; // Ensures the circle stays relative to Earth
-        line.loop = true;
-
-        line.startWidth = 0.005f;
-        line.endWidth = 0.005f;
-
-        CreatePoints();
+        UpdateOrbitSettings();
     }
 
     void OnValidate()
     {
-        // This allows you to see changes to the radius/segments
-        // immediately in the Unity Editor without playing.
-        if (Application.isPlaying || !line) return;
-        CreatePoints();
+        if (!line) line = GetComponent<LineRenderer>();
+        UpdateOrbitSettings();
     }
 
-    // This generates the maths for the perfect circle
-    public void CreatePoints()
+    void UpdateOrbitSettings()
     {
-        if (line == null) line = GetComponent<LineRenderer>();
+        Vector3 tilt = Vector3.zero;
+        Material chosenMaterial = equatorialMaterial;
+
+        switch (selectedOrbit)
+        {
+            case OrbitType.Equatorial:
+                tilt = Vector3.zero;
+                chosenMaterial = equatorialMaterial;
+                break;
+            case OrbitType.Polar:
+                tilt = new Vector3(90f, 0f, 0f);
+                chosenMaterial = polarMaterial;
+                break;
+            case OrbitType.Inclined:
+                tilt = new Vector3(45f, 0f, 45f);
+                chosenMaterial = inclinedMaterial;
+                break;
+            case OrbitType.Retrograde:
+                tilt = new Vector3(180f, 15f, 0f);
+                chosenMaterial = retrogradeMaterial;
+                break;
+            case OrbitType.Stationary:
+                tilt = Vector3.zero; 
+                chosenMaterial = stationaryMaterial;
+                break;
+        }
+
         line.positionCount = segments + 1;
+        line.useWorldSpace = false;
+        line.loop = true;
+        line.startWidth = lineWidth;
+        line.endWidth = lineWidth;
+        
+        if (chosenMaterial != null) line.sharedMaterial = chosenMaterial;
 
         float angle = 0f;
         for (int i = 0; i <= segments; i++)
         {
-            // Simple trigonometry to calculate points around the circle
-            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * radius;
-            float z = Mathf.Cos(Mathf.Deg2Rad * angle) * radius;
-
+            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * globalRadius;
+            float z = Mathf.Cos(Mathf.Deg2Rad * angle) * globalRadius;
             line.SetPosition(i, new Vector3(x, 0, z));
             angle += (360f / segments);
+        }
+
+        transform.localEulerAngles = tilt;
+
+        if (satellitePivot != null && satelliteModel != null)
+        {
+            satellitePivot.localEulerAngles = tilt;
+            satelliteModel.localPosition = new Vector3(globalRadius, 0f, 0f); 
+        }
+    }
+
+    void Update()
+    {
+        if (earthModel != null)
+        {
+            // Follow the Earth's position perfectly, keeping our offset anchor!
+            transform.position = earthModel.position;
         }
     }
 }
