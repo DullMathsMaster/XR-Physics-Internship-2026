@@ -21,9 +21,8 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
         line.useWorldSpace = false; // Ensures the circle stays relative to Earth
         line.loop = true;
 
-        // Optional default settings for width and color
-        line.startWidth = 0.05f;
-        line.endWidth = 0.05f;
+        line.startWidth = 0.005f;
+        line.endWidth = 0.005f;
 
         CreatePoints();
     }
@@ -36,7 +35,7 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
         CreatePoints();
     }
 
-    // This generates the math for the perfect circle
+    // This generates the maths for the perfect circle
     public void CreatePoints()
     {
         if (line == null) line = GetComponent<LineRenderer>();
@@ -49,8 +48,6 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
             float x = Mathf.Sin(Mathf.Deg2Rad * angle) * radius;
             float z = Mathf.Cos(Mathf.Deg2Rad * angle) * radius;
 
-            // Set the point. Since useWorldSpace is false, 
-            // these points are relative to the object's center.
             line.SetPosition(i, new Vector3(x, 0, z));
             angle += (360f / segments);
         }
