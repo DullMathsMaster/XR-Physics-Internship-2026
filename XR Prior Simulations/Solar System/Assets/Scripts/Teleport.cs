@@ -36,8 +36,9 @@ public class Teleport : MonoBehaviour
     public void StopTracking()
     {
         isTracking = false;
+        transform.SetParent(null);
+        transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
     }
-
     private void LateUpdate()
     {
         if (isTracking && currentPlanetIndex != -1)
@@ -132,8 +133,12 @@ public class Teleport : MonoBehaviour
         float targetY = PlanetLocation.y + heightOffset;
         
         transform.position = new Vector3(r * Mathf.Cos(theta), targetY, r * Mathf.Sin(theta));
-
-        Quaternion rotation = Quaternion.LookRotation(PlanetLocation - transform.position);
-        transform.rotation = rotation;
+        Vector3 lookDirection = PlanetLocation - transform.position;
+        lookDirection.y = 0; 
+        
+        if (lookDirection != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+        }
     }
 }
