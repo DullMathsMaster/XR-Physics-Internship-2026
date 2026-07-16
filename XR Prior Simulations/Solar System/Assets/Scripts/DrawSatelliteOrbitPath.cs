@@ -32,6 +32,10 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
     private LineRenderer line;
     private Vector3 currentTilt;
 
+    //  Temporary variables for orbit cycling demonstration
+    private float orbitCycleTimer = 0f;
+    private const float cycleDuration = 4f;
+
     void Awake()
     {
         line = GetComponent<LineRenderer>();
@@ -104,14 +108,29 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
     {
         if (earthModel != null)
         {
-            // 1. Follow the Earth's position perfectly
+            // Follow the Earth's position perfectly
             transform.position = earthModel.position;
 
-            // 2. Extract Earth's axial tilt without inheriting its daily spinning speed
+            // Extract Earth's axial tilt without inheriting its daily spinning speed
             Quaternion earthAxialTilt = Quaternion.FromToRotation(Vector3.up, earthModel.up);
 
-            // 3. Combine Earth's axial tilt with our specific orbital path tilt
+            // Combine Earth's axial tilt with our specific orbital path tilt
             transform.rotation = earthAxialTilt * Quaternion.Euler(currentTilt);
+        }
+
+        // --- TEMPORARY AUTOMATIC ORBIT CYCLER ---
+        orbitCycleTimer += Time.deltaTime;
+        if (orbitCycleTimer >= cycleDuration)
+        {
+            orbitCycleTimer = 0f;
+
+            int totalOrbitsCount = System.Enum.GetValues(typeof(OrbitType)).Length;
+            int nextOrbitIndex = ((int)selectedOrbit + 1) % totalOrbitsCount;
+            
+            selectedOrbit = (OrbitType)nextOrbitIndex;
+
+            UpdateOrbitSettings();
+            Debug.Log($"Orbit automatically cycled to: {selectedOrbit}");
         }
     }
 }

@@ -19,8 +19,57 @@ public class Teleport : MonoBehaviour
     public Vector3 PlanetLocation;
     public float PlanetScale;
 
+    private bool isTracking = false;
+    private int currentPlanetIndex = -1;
+
+    private float zoomMultiplier = 1.0f;
+    private float heightOffset = 0f;
+
+    public void StartTracking()
+    {
+        if (currentPlanetIndex != -1)
+        {
+            isTracking = true;
+        }
+    }
+
+    public void StopTracking()
+    {
+        isTracking = false;
+    }
+
+    private void LateUpdate()
+    {
+        if (isTracking && currentPlanetIndex != -1)
+        {
+            HandleInputData(currentPlanetIndex);
+        }
+    }
+
+    public void ZoomIn()
+    {
+        if (currentPlanetIndex != -1)
+        {
+            zoomMultiplier = 0.4f;
+            heightOffset = -1.0f;
+            HandleInputData(currentPlanetIndex);
+        }
+    }
+
+    public void ResetZoom()
+    {
+        zoomMultiplier = 1.0f;
+        heightOffset = 0f;
+        if (currentPlanetIndex != -1)
+        {
+            HandleInputData(currentPlanetIndex);
+        }
+    }
+
     public void HandleInputData(int val)
     {
+        currentPlanetIndex = val;
+
         if (val == 0) //Mercury
         {
             PlanetLocation = MercurySphere.transform.position;
@@ -69,18 +118,20 @@ public class Teleport : MonoBehaviour
             PlanetScale = NeptuneSphere.transform.localScale.x;
         }
 
-        if (val == 8) //Neptune
+        if (val == 8) //Ceres
         {
             PlanetLocation = CeresSphere.transform.position;
             PlanetScale = CeresSphere.transform.localScale.x;
         }
 
-        //transform.position = PlanetLocation + new Vector3(PlanetScale * 4, 0, 0);
-        float anglefromplanet = (400f / Vector3.Magnitude(PlanetLocation)) + (PlanetScale * 0.6f);
+        float anglefromplanet = ((400f / Vector3.Magnitude(PlanetLocation)) + (PlanetScale * 0.6f)) * zoomMultiplier;
+        
         float theta = Mathf.Atan2(PlanetLocation.z, PlanetLocation.x) - (anglefromplanet * Mathf.PI / 180f);
         float r = Mathf.Sqrt(Mathf.Pow(PlanetLocation.x, 2) + Mathf.Pow(PlanetLocation.z, 2));
-        transform.position = new Vector3( r*Mathf.Cos(theta), 0, r * Mathf.Sin(theta));
         
+        float targetY = PlanetLocation.y + heightOffset;
+        
+        transform.position = new Vector3(r * Mathf.Cos(theta), targetY, r * Mathf.Sin(theta));
 
         Quaternion rotation = Quaternion.LookRotation(PlanetLocation - transform.position);
         transform.rotation = rotation;
