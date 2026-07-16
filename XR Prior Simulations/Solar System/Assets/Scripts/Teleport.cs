@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Teleport : MonoBehaviour
 {
+    [Header("Teleport Targets")]
     public GameObject MercurySphere;
     public GameObject VenusSphere;
     public GameObject EarthSphere;
@@ -14,8 +11,10 @@ public class Teleport : MonoBehaviour
     public GameObject SaturnSphere;
     public GameObject UranusSphere;
     public GameObject NeptuneSphere;
+    public GameObject PlutoSphere;
     public GameObject CeresSphere;
 
+    [Header("Current Target Information")]
     public Vector3 PlanetLocation;
     public float PlanetScale;
 
@@ -36,9 +35,16 @@ public class Teleport : MonoBehaviour
     public void StopTracking()
     {
         isTracking = false;
+
         transform.SetParent(null);
-        transform.rotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+
+        transform.rotation = Quaternion.Euler(
+            0f,
+            transform.eulerAngles.y,
+            0f
+        );
     }
+
     private void LateUpdate()
     {
         if (isTracking && currentPlanetIndex != -1)
@@ -53,6 +59,7 @@ public class Teleport : MonoBehaviour
         {
             zoomMultiplier = 0.4f;
             heightOffset = -1.0f;
+
             HandleInputData(currentPlanetIndex);
         }
     }
@@ -61,6 +68,7 @@ public class Teleport : MonoBehaviour
     {
         zoomMultiplier = 1.0f;
         heightOffset = 0f;
+
         if (currentPlanetIndex != -1)
         {
             HandleInputData(currentPlanetIndex);
@@ -71,74 +79,110 @@ public class Teleport : MonoBehaviour
     {
         currentPlanetIndex = val;
 
-        if (val == 0) //Mercury
+        GameObject selectedPlanet = null;
+
+        switch (val)
         {
-            PlanetLocation = MercurySphere.transform.position;
-            PlanetScale = MercurySphere.transform.localScale.x;
+            case 0:
+                selectedPlanet = MercurySphere;
+                break;
+
+            case 1:
+                selectedPlanet = VenusSphere;
+                break;
+
+            case 2:
+                selectedPlanet = EarthSphere;
+                break;
+
+            case 3:
+                selectedPlanet = MarsSphere;
+                break;
+
+            case 4:
+                selectedPlanet = JupiterSphere;
+                break;
+
+            case 5:
+                selectedPlanet = SaturnSphere;
+                break;
+
+            case 6:
+                selectedPlanet = UranusSphere;
+                break;
+
+            case 7:
+                selectedPlanet = NeptuneSphere;
+                break;
+
+            case 8:
+                selectedPlanet = PlutoSphere;
+                break;
+
+            case 9:
+                selectedPlanet = CeresSphere;
+                break;
+
+            default:
+                Debug.LogWarning(
+                    "Teleport received an invalid planet index: " + val
+                );
+                return;
         }
 
-        if (val == 1) //Venus
+        if (selectedPlanet == null)
         {
-            PlanetLocation = VenusSphere.transform.position;
-            PlanetScale = VenusSphere.transform.localScale.x;
+            Debug.LogWarning(
+                "Teleport target has not been assigned for index: " + val
+            );
+            return;
         }
 
-        if (val == 2) //Earth
+        PlanetLocation = selectedPlanet.transform.position;
+        PlanetScale = selectedPlanet.transform.lossyScale.x;
+
+        float distanceFromSun = Vector3.Magnitude(PlanetLocation);
+
+        if (distanceFromSun <= 0.001f)
         {
-            PlanetLocation = EarthSphere.transform.position;
-            PlanetScale = EarthSphere.transform.localScale.x;
+            Debug.LogWarning(
+                "Teleport target is too close to the world origin."
+            );
+            return;
         }
 
-        if (val == 3) //Mars
-        {
-            PlanetLocation = MarsSphere.transform.position;
-            PlanetScale = MarsSphere.transform.localScale.x;
-        }
+        float angleFromPlanet =
+            ((400f / distanceFromSun) + (PlanetScale * 0.6f))
+            * zoomMultiplier;
 
-        if (val == 4) //Jupiter
-        {
-            PlanetLocation = JupiterSphere.transform.position;
-            PlanetScale = JupiterSphere.transform.localScale.x;
-        }
+        float theta =
+            Mathf.Atan2(PlanetLocation.z, PlanetLocation.x)
+            - (angleFromPlanet * Mathf.Deg2Rad);
 
-        if (val == 5) //Saturn
-        {
-            PlanetLocation = SaturnSphere.transform.position;
-            PlanetScale = SaturnSphere.transform.localScale.x;
-        }
+        float radius = Mathf.Sqrt(
+            (PlanetLocation.x * PlanetLocation.x)
+            + (PlanetLocation.z * PlanetLocation.z)
+        );
 
-        if (val == 6) //Uranus
-        {
-            PlanetLocation = UranusSphere.transform.position;
-            PlanetScale = UranusSphere.transform.localScale.x;
-        }
-
-        if (val == 7) //Neptune
-        {
-            PlanetLocation = NeptuneSphere.transform.position;
-            PlanetScale = NeptuneSphere.transform.localScale.x;
-        }
-
-        if (val == 8) //Ceres
-        {
-            PlanetLocation = CeresSphere.transform.position;
-            PlanetScale = CeresSphere.transform.localScale.x;
-        }
-
-        float anglefromplanet = ((400f / Vector3.Magnitude(PlanetLocation)) + (PlanetScale * 0.6f)) * zoomMultiplier;
-        
-        float theta = Mathf.Atan2(PlanetLocation.z, PlanetLocation.x) - (anglefromplanet * Mathf.PI / 180f);
-        float r = Mathf.Sqrt(Mathf.Pow(PlanetLocation.x, 2) + Mathf.Pow(PlanetLocation.z, 2));
-        
         float targetY = PlanetLocation.y + heightOffset;
-        
-        transform.position = new Vector3(r * Mathf.Cos(theta), targetY, r * Mathf.Sin(theta));
-        Vector3 lookDirection = PlanetLocation - transform.position;
-        lookDirection.y = 0; 
-        
-        if (lookDirection != Vector3.zero)
+
+        transform.position = new Vector3(
+            radius * Mathf.Cos(theta),
+            targetY,
+            radius * Mathf.Sin(theta)
+        );
+
+        Vector3 lookDirection =
+            PlanetLocation - transform.position;
+
+        lookDirection.y = 0f;
+
+        if (lookDirection.sqrMagnitude > 0.001f)
         {
-            transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+            transform.rotation = Quaternion.LookRotation(
+                lookDirection.normalized,
+                Vector3.up
+            );
         }
     }
 }
