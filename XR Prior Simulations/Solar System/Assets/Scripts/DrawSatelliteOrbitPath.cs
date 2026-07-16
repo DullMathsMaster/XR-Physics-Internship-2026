@@ -30,6 +30,7 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
     [Range(10, 100)] public int segments = 60;
 
     private LineRenderer line;
+    private Vector3 currentTilt;
 
     void Awake()
     {
@@ -89,14 +90,12 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
             angle += (360f / segments);
         }
 
-        transform.localEulerAngles = tilt;
+        // Save the structural tilt vector for Update()
+        currentTilt = tilt;
 
         if (satellitePivot != null && satelliteModel != null)
         {
-            // FIX 1: Set this to zero! The pivot inherits the parent's tilt automatically.
             satellitePivot.localEulerAngles = Vector3.zero;
-            
-            // FIX 2: Ensure this starts on the Z-axis to align with the LineRenderer start point.
             satelliteModel.localPosition = new Vector3(0f, 0f, globalRadius); 
         }
     }
@@ -105,8 +104,14 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
     {
         if (earthModel != null)
         {
-            // Follow the Earth's position perfectly, keeping our offset anchor!
+            // 1. Follow the Earth's position perfectly
             transform.position = earthModel.position;
+
+            // 2. Extract Earth's axial tilt without inheriting its daily spinning speed
+            Quaternion earthAxialTilt = Quaternion.FromToRotation(Vector3.up, earthModel.up);
+
+            // 3. Combine Earth's axial tilt with our specific orbital path tilt
+            transform.rotation = earthAxialTilt * Quaternion.Euler(currentTilt);
         }
     }
 }
