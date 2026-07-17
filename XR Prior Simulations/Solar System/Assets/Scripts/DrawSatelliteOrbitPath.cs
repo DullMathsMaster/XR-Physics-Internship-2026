@@ -52,27 +52,38 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
     {
         Vector3 tilt = Vector3.zero;
         Material chosenMaterial = equatorialMaterial;
+        
+        float activeRadius = globalRadius;
 
         switch (selectedOrbit)
         {
             case OrbitType.Equatorial:
                 tilt = Vector3.zero;
+                activeRadius = globalRadius * 0.85f; // Closer to Earth
                 chosenMaterial = equatorialMaterial;
                 break;
+
             case OrbitType.Polar:
-                tilt = new Vector3(90f, 0f, 0f);
+                tilt = new Vector3(90f, 0f, 0f); // Perfect North-South
+                activeRadius = globalRadius * 1.0f; // Medium distance
                 chosenMaterial = polarMaterial;
                 break;
+
             case OrbitType.Inclined:
-                tilt = new Vector3(45f, 0f, 45f);
+                tilt = new Vector3(45f, 0f, 0f); // Tilted 45 degrees
+                activeRadius = globalRadius * 1.05f; // Slightly further out
                 chosenMaterial = inclinedMaterial;
                 break;
+
             case OrbitType.Retrograde:
-                tilt = new Vector3(180f, 15f, 0f);
+                tilt = new Vector3(140f, 30f, 0f); 
+                activeRadius = globalRadius * 0.9f; 
                 chosenMaterial = retrogradeMaterial;
                 break;
+
             case OrbitType.Stationary:
-                tilt = Vector3.zero; 
+                tilt = Vector3.zero; // Flat on the equator
+                activeRadius = globalRadius * 1.5f; // Real geostationary orbits are VERY far out!
                 chosenMaterial = stationaryMaterial;
                 break;
         }
@@ -88,22 +99,20 @@ public class DrawSatelliteOrbitPath : MonoBehaviour
         float angle = 0f;
         for (int i = 0; i <= segments; i++)
         {
-            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * globalRadius;
-            float z = Mathf.Cos(Mathf.Deg2Rad * angle) * globalRadius;
+            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * activeRadius;
+            float z = Mathf.Cos(Mathf.Deg2Rad * angle) * activeRadius;
             line.SetPosition(i, new Vector3(x, 0, z));
             angle += (360f / segments);
         }
 
-        // Save the structural tilt vector for Update()
         currentTilt = tilt;
 
         if (satellitePivot != null && satelliteModel != null)
         {
             satellitePivot.localEulerAngles = Vector3.zero;
-            satelliteModel.localPosition = new Vector3(0f, 0f, globalRadius); 
+            satelliteModel.localPosition = new Vector3(0f, 0f, activeRadius); 
         }
     }
-
     void Update()
     {
         if (earthModel != null)
