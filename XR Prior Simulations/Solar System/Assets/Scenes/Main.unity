@@ -2014,6 +2014,7 @@ GameObject:
   - component: {fileID: 124382145}
   - component: {fileID: 124382151}
   - component: {fileID: 124382152}
+  - component: {fileID: 124382153}
   m_Layer: 0
   m_Name: Saturn UI Canvas
   m_TagString: UIBox
@@ -2164,6 +2165,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   PlanetRadius: 0
+--- !u!114 &124382153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124382144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 210586370}
+  backgroundRect: {fileID: 748303890}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Saturn is the second largest planet in the Solar System and is a gas giant
+    like Jupiter. It is famous for its bright rings, which are made mostly of ice.
+  ks3Text: Saturn is the second largest planet in the Solar System and is a gas giant
+    like Jupiter. It has the largest and brightest ring system in the Solar System.
+    The rings are made mostly of small particles of ice, with some rock and dust.
+    Saturn has over 146 moons, and its largest moon, Titan, has a thick atmosphere.
+  ks4Text: Saturn is the second largest planet in the Solar System and is a gas giant
+    like Jupiter. Saturn has the brightest and largest ring system in the Solar System.
+    The rings are mostly made of small particles of ice, but there are also particles
+    of rock and dust. Saturn has over 146 moons, and its largest moon, Titan, is
+    the only moon in the Solar System with a substantial atmosphere.
+  ks5Text: Saturn is the second largest planet in the Solar System and is a gas giant
+    like Jupiter. Saturn has the brightest and largest ring system in the Solar System.
+    The rings are mostly made of small particles of ice, with smaller amounts of
+    rock and dust, and are thought to be the remains of broken-up moons or comets.
+    Saturn has over 146 known moons. Its largest moon, Titan, is the only moon in
+    the Solar System with a substantial atmosphere and has lakes and rivers of liquid
+    methane and ethane. Another moon, Enceladus, has geysers that eject water vapour
+    and ice into space, making it one of the best places to search for conditions
+    that could support life.
 --- !u!1 &126795575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,6 +2772,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1250510733}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
+--- !u!1 &144797998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 144797997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &156307864
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,6 +4598,7 @@ GameObject:
   - component: {fileID: 261524681}
   - component: {fileID: 261524687}
   - component: {fileID: 261524688}
+  - component: {fileID: 261524689}
   m_Layer: 0
   m_Name: Venus UI Canvas
   m_TagString: UIBox
@@ -4705,6 +4749,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   PlanetRadius: 0
+--- !u!114 &261524689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261524680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 1899894308}
+  backgroundRect: {fileID: 1459015721}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Venus is the second planet from the Sun. It is the hottest planet in our
+    Solar System because it has a very thick atmosphere. Venus is almost the same
+    size as Earth, so it is like Earth's "twin".
+  ks3Text: Venus is the second planet from the Sun and the hottest planet in our
+    Solar System because its thick atmosphere traps heat. Venus spins backwards compared
+    to most other planets, and it is very similar to Earth in size and gravity.
+  ks4Text: Venus is the second planet from the Sun and the hottest planet in our
+    Solar System due to its thick atmosphere. Venus spins backwards compared to the
+    other planets, and because of its slow rotation, it is the only planet whose
+    day is longer than its year. Venus is very similar to Earth in terms of size
+    and gravity.
+  ks5Text: Venus is the second planet from the Sun and the hottest planet in our
+    Solar System due to its dense atmosphere, which causes an extreme greenhouse
+    effect by trapping heat. Venus rotates in the opposite direction to most other
+    planets, and because of its slow rotation, it is the only planet whose day is
+    longer than its year. Venus is very similar to Earth in terms of size, mass and
+    gravity, but its surface pressure is around 90 times greater than Earth's, making
+    it an extremely hostile environment.
 --- !u!1 &264567022
 GameObject:
   m_ObjectHideFlags: 0
@@ -5123,6 +5201,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 655777987}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
+--- !u!114 &291298641 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 291298640}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab84ed7ff64d7948817b9dc90f861a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &296517536
 GameObject:
   m_ObjectHideFlags: 0
@@ -6689,6 +6779,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1886528254}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
+--- !u!1 &487324547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9157215350416614165, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 487324546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &493800784
 GameObject:
   m_ObjectHideFlags: 0
@@ -7884,6 +7980,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1584172088}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
+--- !u!114 &590687545 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 590687544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680371224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab84ed7ff64d7948817b9dc90f861a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &598034975 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
@@ -8362,6 +8470,7 @@ GameObject:
   - component: {fileID: 616908231}
   - component: {fileID: 616908232}
   - component: {fileID: 616908233}
+  - component: {fileID: 616908234}
   m_Layer: 0
   m_Name: Mars UI Canvas
   m_TagString: UIBox
@@ -8512,6 +8621,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   PlanetRadius: 0
+--- !u!114 &616908234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616908224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 2055725042}
+  backgroundRect: {fileID: 1907879048}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Mars is the fourth planet from the Sun and is known as the "Red Planet"
+    because of its dusty red surface. It is the furthest rocky planet from the Sun.
+    We have sent robots called rovers to explore Mars to learn more about it.
+  ks3Text: Mars is known as the "Red Planet" because iron oxide (rust) in its dust
+    gives it a red appearance. It is the furthest rocky planet from the Sun and has
+    huge extinct volcanoes. Several robotic rovers, including NASA's Curiosity Rover,
+    have explored its surface.
+  ks4Text: Mars has been given the nickname the "Red Planet" because of its red appearance,
+    caused by iron oxide dust covering its surface. Mars is the furthest rocky planet
+    from the Sun and is home to some huge extinct volcanoes. We have sent many rovers
+    to Mars to study its surface, such as NASA's Curiosity Rover.
+  ks5Text: Mars has been given the nickname the "Red Planet" because of its red appearance,
+    caused by iron oxide dust covering its surface. Mars is the furthest rocky planet
+    from the Sun and is home to Olympus Mons, the largest volcano in the Solar System
+    and over twice as big as Mount Everest. We have sent many robotic missions, including
+    NASA's Curiosity and Perseverance rovers, to study its geology and search for
+    evidence that liquid water, possibly microbial life, once existed on Mars.
 --- !u!1 &627116339
 GameObject:
   m_ObjectHideFlags: 0
@@ -10421,6 +10563,7 @@ GameObject:
   - component: {fileID: 689200995}
   - component: {fileID: 689201001}
   - component: {fileID: 689201002}
+  - component: {fileID: 689201003}
   m_Layer: 0
   m_Name: Uranus UI Canvas
   m_TagString: UIBox
@@ -10571,6 +10714,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   PlanetRadius: 0
+--- !u!114 &689201003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689200994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 1278055245}
+  backgroundRect: {fileID: 1299285640}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: 'Uranus is an ice giant made of water. Uranus spins on its side, making
+    it different from all the other planets. '
+  ks3Text: "Uranus is an ice giant made of water, ammonia and methane. The methane
+    absorbs red light but reflects blue light, giving Uranus its blue-green colour.
+    Uranus appears to spin sideways, or \"roll\", around the Sun because it is tilted
+    by about 98\xB0. "
+  ks4Text: Uranus is an ice giant made of water, ammonia and methane. The methane
+    absorbs red light but reflects blue light, giving the planet its unique colour.
+    Uranus appears to spin sideways, or "roll", around the Sun. Uranus also has very
+    faint, dark rings. Uranus is so far away that only one spacecraft has ever explored
+    it up close - NASA's Voyager 2 mission.
+  ks5Text: "Uranus is an ice giant made of water, ammonia and methane. The methane
+    absorbs red light but reflects blue light, giving the planet its unique blue-green
+    colour. Uranus rotates on its side because its axis is tilted by about 98\xB0,
+    possibly due to a giant collision early in the Solar System's history. It also
+    has a system of faint, dark rings and at least 28 known moons, including Titania
+    and Oberon, the two largest. Uranus is so far away that only one spacecraft has
+    ever explored it up close - NASA's Voyager 2 mission in 1986."
 --- !u!1 &690616634
 GameObject:
   m_ObjectHideFlags: 0
@@ -10679,6 +10856,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1228509693}
+  - {fileID: 1714878472}
   m_Father: {fileID: 638832932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -12445,6 +12623,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 230628311}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
+--- !u!114 &823163243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 823163242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326671198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab84ed7ff64d7948817b9dc90f861a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &829986924
 GameObject:
   m_ObjectHideFlags: 0
@@ -14589,6 +14779,7 @@ GameObject:
   - component: {fileID: 932770364}
   - component: {fileID: 932770363}
   - component: {fileID: 932770362}
+  - component: {fileID: 932770365}
   m_Layer: 0
   m_Name: Pluto UI Canvas
   m_TagString: UIBox
@@ -14637,6 +14828,43 @@ MonoBehaviour:
   PlanetSphere: {fileID: 0}
   padding: 0.5
   smoothSpeed: 15
+--- !u!114 &932770365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932770361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 1617905396}
+  backgroundRect: {fileID: 1409508090}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Pluto is a dwarf planet that orbits far beyond Neptune. It used to be
+    called the ninth planet, but scientists now classify it as a dwarf planet because
+    they discovered many similar objects nearby.
+  ks3Text: Pluto is a dwarf planet in a region beyond Neptune called the Kuiper Belt.
+    It was once considered the ninth planet, but in 2006 astronomers created a new
+    definition of a planet. Pluto was reclassified because it is one of many objects
+    orbiting in the Kuiper Belt.
+  ks4Text: Pluto is a dwarf planet beyond Neptune in the Kuiper Belt. In 2006, the
+    International Astronomical Union (IAU) introduced a new definition of a planet.
+    Pluto orbits the Sun and is nearly spherical, but it has not cleared the neighbourhood
+    around its orbit, so it is now classified as a dwarf planet. Pluto's reclassification
+    shows how scientific ideas and definitions can change when new evidence becomes
+    available.
+  ks5Text: Pluto's reclassification illustrates how scientific definitions evolve
+    as new evidence becomes available. The International Astronomical Union (IAU)
+    defines a planet as an object that (1) orbits the Sun, (2) has enough mass for
+    gravity to make it nearly spherical (hydrostatic equilibrium), and (3) has cleared
+    the neighbourhood around its orbit by becoming gravitationally dominant. Pluto
+    meets the first two criteria but fails the third because it is one of many objects
+    within the Kuiper Belt. The discovery of other large Kuiper Belt objects, such
+    as Eris, prompted astronomers to refine the definition of a planet in 2006.
 --- !u!1001 &941195043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14786,7 +15014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &952854078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15363,7 +15591,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 45, y: 30}
+  m_SizeDelta: {x: 45, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994395603
 MonoBehaviour:
@@ -19754,6 +19982,7 @@ GameObject:
   - component: {fileID: 1291950317}
   - component: {fileID: 1291950316}
   - component: {fileID: 1291950315}
+  - component: {fileID: 1291950320}
   m_Layer: 0
   m_Name: Earth Seasons
   m_TagString: Untagged
@@ -19878,6 +20107,41 @@ RectTransform:
   m_AnchoredPosition: {x: 4.7, y: 0.55}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1291950320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291950313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 873531331}
+  backgroundRect: {fileID: 1817830010}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Can you see how the Earth is tilted? This is what causes the seasons!
+    When your part of the Earth tilts towards the Sun, it is summer. When it tilts
+    away from the Sun, it is winter.
+  ks3Text: Can you see how the Earth is tilted? This is what causes the seasons!
+    When the Earth's axis points towards the Sun, that hemisphere receives more sunlight,
+    making it summer. When it points away from the Sun, it receives less sunlight,
+    making it winter.
+  ks4Text: Can you see how the Earth is tilted? This is what causes the seasons!
+    When the Earth's axis points towards the Sun, it is summer for that hemisphere.
+    When the Earth's axis points away from the Sun, it is winter for that hemisphere.
+    The seasons are caused by the Earth's tilt, not because the Earth is closer to
+    the Sun.
+  ks5Text: "Can you see how the Earth is tilted? The Earth's 23.5\xB0 axial tilt
+    is what causes the seasons. When a hemisphere is tilted towards the Sun, sunlight
+    strikes it more directly and the days are longer, making it warmer and producing
+    summer. When it is tilted away from the Sun, sunlight arrives at a lower angle
+    and the days are shorter, producing winter. The Earth's distance from the Sun
+    changes very little throughout the year, so it is the tilt -not the Earth's orbit-
+    that causes the seasons."
 --- !u!1 &1292228594
 GameObject:
   m_ObjectHideFlags: 0
@@ -22040,6 +22304,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 598034986}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
+--- !u!114 &1443332459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 1443332458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab84ed7ff64d7948817b9dc90f861a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1459015720
 GameObject:
   m_ObjectHideFlags: 0
@@ -22132,6 +22408,7 @@ GameObject:
   - component: {fileID: 1461994243}
   - component: {fileID: 1461994249}
   - component: {fileID: 1461994250}
+  - component: {fileID: 1461994251}
   m_Layer: 0
   m_Name: Mercury UI Canvas
   m_TagString: UIBox
@@ -22282,6 +22559,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   PlanetRadius: 0
+--- !u!114 &1461994251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461994242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 1990640412}
+  backgroundRect: {fileID: 994395602}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Mercury is the closest planet to the Sun. It is the smallest planet in
+    our Solar System and has a rocky surface covered in craters.
+  ks3Text: Mercury is the closest planet to the Sun and the smallest planet in our
+    Solar System. It is a rocky planet with many craters and almost no atmosphere.
+  ks4Text: Mercury is the nearest planet to the Sun and the smallest in our Solar
+    System. It has a solid surface made of mostly rocks and metals and is covered
+    in huge impact craters. It is named after the Roman god Mercury, who was the
+    god of travellers and messenger of the gods - probably because it moves so quickly
+    through the sky!
+  ks5Text: Mercury is the nearest planet to the Sun and the smallest in our Solar
+    System. It has a solid surface made of mostly rocks and metals and is covered
+    in huge impact craters. It is named after the Roman god Mercury, who was the
+    messenger of the gods - probably because it moves so quickly through the sky!
+    Mercury has almost no atmosphere, only a very thin exosphere, so its surface
+    experiences extreme temperature differences between day and night.
 --- !u!1 &1462819951
 GameObject:
   m_ObjectHideFlags: 0
@@ -23392,6 +23700,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 967153760}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
+--- !u!114 &1497327134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 1497327133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab84ed7ff64d7948817b9dc90f861a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1511353273
 GameObject:
   m_ObjectHideFlags: 0
@@ -24832,6 +25152,7 @@ GameObject:
   - component: {fileID: 1636572265}
   - component: {fileID: 1636572264}
   - component: {fileID: 1636572263}
+  - component: {fileID: 1636572270}
   m_Layer: 0
   m_Name: Ceres UI Canvas
   m_TagString: UIBox
@@ -24982,6 +25303,45 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1636572270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636572261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 845719446}
+  backgroundRect: {fileID: 871263447}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Asteroids are rocky objects that orbit the Sun. Most are found in the
+    asteroid belt between Mars and Jupiter. The asteroids here have been made much
+    bigger so you can see them, but many real asteroids are much smaller than this.
+  ks3Text: Asteroids are rocky objects that orbit the Sun, and most are found in
+    the main asteroid belt between Mars and Jupiter. The asteroids shown here have
+    been enlarged so you can see them, but many are much smaller in reality. Ceres
+    is the largest object in the asteroid belt and is classified as a dwarf planet.
+  ks4Text: Asteroids are rocky objects in orbit around the Sun, and most orbit here
+    in the main asteroid belt between Mars and Jupiter. The asteroids shown have
+    been made bigger so you can see them, but in reality many are much smaller. Ceres
+    is the largest object in the belt and is the only dwarf planet in the inner Solar
+    System. Turn up the speed again and see how the asteroids closer to Mars move
+    faster than those nearer to Jupiter. This is because objects closer to the Sun
+    complete their orbits more quickly.
+  ks5Text: Asteroids are rocky remnants left over from the formation of the Solar
+    System about 4.6 billion years ago. Most orbit in the main asteroid belt between
+    Mars and Jupiter. The asteroids shown here have been enlarged for visibility,
+    but many real asteroids are only a few metres (or even centimetres) across. Ceres
+    is the largest object in the belt and the only dwarf planet in the inner Solar
+    System. Notice that asteroids closer to Mars orbit faster than those nearer Jupiter.
+    This follows Kepler's Third Law, which states that objects further from the Sun
+    have longer orbital periods because the Sun's gravitational influence is weaker
+    at greater distances.
 --- !u!1 &1645001219
 GameObject:
   m_ObjectHideFlags: 0
@@ -25254,6 +25614,7 @@ GameObject:
   - component: {fileID: 1659958671}
   - component: {fileID: 1659958677}
   - component: {fileID: 1659958678}
+  - component: {fileID: 1659958679}
   m_Layer: 0
   m_Name: Neptune UI Canvas
   m_TagString: UIBox
@@ -25404,6 +25765,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   PlanetRadius: 0
+--- !u!114 &1659958679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659958670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 156307866}
+  backgroundRect: {fileID: 1814351584}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Neptune is the planet furthest from the Sun. It is an ice giant with a
+    deep blue colour. Neptune has the strongest winds of any planet in the Solar
+    System, blowing faster than 1,000 mph!
+  ks3Text: Neptune is the most distant planet from the Sun and is an ice giant. It
+    has the strongest winds of any planet in the Solar System, which can exceed 1,000
+    mph. Neptune is the only planet in our Solar System that cannot be seen with
+    the naked eye and was discovered using mathematics before anyone had observed
+    it through a telescope.
+  ks4Text: Neptune is the most distant planet from the Sun and is an ice giant. It
+    has the strongest winds of any planet in the Solar System, which can exceed 1,000
+    mph. Neptune is the only planet in our Solar System not visible to the naked
+    eye and was discovered through mathematical calculations rather than direct observation.
+  ks5Text: Neptune is the most distant planet from the Sun and is an ice giant. It
+    has the strongest winds of any planet in the Solar System, reaching speeds of
+    over 1,000 mph (1,600 km/h). Neptune is the only planet in our Solar System not
+    visible to the naked eye and was discovered through mathematical calculations
+    after astronomers noticed that Uranus's orbit was being disturbed by an unseen
+    planet (hence the only planet not discovered empirically). Neptune has 16 known
+    moons, the largest of which is Triton. Triton orbits Neptune backwards, suggesting
+    that it was captured by Neptune's gravity rather than forming alongside the planet.
 --- !u!1 &1673881628
 GameObject:
   m_ObjectHideFlags: 0
@@ -25761,6 +26158,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1986870023}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
+--- !u!114 &1690885620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 1690885619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab84ed7ff64d7948817b9dc90f861a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1691527246
 GameObject:
   m_ObjectHideFlags: 0
@@ -26037,6 +26446,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705922593}
   m_CullTransparentMesh: 1
+--- !u!1 &1714878469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1714878472}
+  - component: {fileID: 1714878471}
+  - component: {fileID: 1714878470}
+  m_Layer: 0
+  m_Name: Available from KS3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1714878470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714878469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Available from KS3
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 8
+  m_fontSizeBase: 8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1714878471
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714878469}
+  m_CullTransparentMesh: 1
+--- !u!224 &1714878472
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714878469}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 723972032}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1716470504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 662797255782083321, guid: d437ab513338cdd45b5c541c8f0cb7c9,
@@ -27484,6 +28027,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1270105413}
+  - {fileID: 1827336098}
   m_Father: {fileID: 638832932}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -27937,6 +28481,140 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1690885619}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1827336097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1827336098}
+  - component: {fileID: 1827336100}
+  - component: {fileID: 1827336099}
+  m_Layer: 0
+  m_Name: Available from KS3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1827336098
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827336097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1791584454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1827336099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827336097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Available from KS3
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 8
+  m_fontSizeBase: 8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1827336100
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827336097}
+  m_CullTransparentMesh: 1
 --- !u!1 &1830738107
 GameObject:
   m_ObjectHideFlags: 0
@@ -27953,6 +28631,7 @@ GameObject:
   - component: {fileID: 1830738108}
   - component: {fileID: 1830738114}
   - component: {fileID: 1830738115}
+  - component: {fileID: 1830738116}
   m_Layer: 0
   m_Name: Jupiter UI Canvas
   m_TagString: UIBox
@@ -28103,6 +28782,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   PlanetRadius: 0
+--- !u!114 &1830738116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830738107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 627116341}
+  backgroundRect: {fileID: 1137873877}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Jupiter is the largest planet in the Solar System. It is made mostly of
+    gas, so it does not have a solid surface like Earth. Can you spot the Great Red
+    Spot? It is a giant storm that is bigger than Earth!
+  ks3Text: Jupiter is the largest planet in the Solar System. It is a gas giant,
+    made mostly of hydrogen and helium. Can you spot the Great Red Spot? It is a
+    giant storm that has lasted for hundreds of years.
+  ks4Text: Jupiter is the largest planet in the Solar System. It is a gas giant,
+    mostly made of hydrogen and helium. The dark orange stripes are called belts,
+    and the light bands are called zones. Can you spot the Great Red Spot? It is
+    a storm, larger than Earth, which has raged for hundreds of years!
+  ks5Text: Jupiter is the largest planet in the Solar System. It is a gas giant,
+    made mostly of hydrogen and helium, and has no solid surface. The dark orange
+    stripes are called belts, while the lighter bands are called zones. These are
+    formed by powerful atmospheric circulation and high-speed jet streams. Can you
+    spot the Great Red Spot? It is a gigantic anticyclonic storm, larger than Earth,
+    that has been raging for at least 350 years. Jupiter also has the strongest magnetic
+    field of any planet in the Solar System and more than 90 known moons.
 --- !u!1 &1839829317
 GameObject:
   m_ObjectHideFlags: 0
@@ -28119,6 +28831,7 @@ GameObject:
   - component: {fileID: 1839829318}
   - component: {fileID: 1839829324}
   - component: {fileID: 1839829325}
+  - component: {fileID: 1839829326}
   m_Layer: 0
   m_Name: Earth UI Canvas
   m_TagString: UIBox
@@ -28269,6 +28982,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   PlanetRadius: 0
+--- !u!114 &1839829326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839829317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da54d0fad31674d97b6f87a93a5ac5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionText: {fileID: 375090875}
+  backgroundRect: {fileID: 899749178}
+  verticalPadding: 5
+  minimumHeight: 0
+  ks2Text: Earth is the third planet from the Sun and the only known planet with
+    liquid water on its surface. It is our home and has one natural satellite, the
+    Moon. The Moon helps cause the tides in our oceans.
+  ks3Text: Earth is the third planet from the Sun and the only known planet with
+    liquid water on its surface. It is the largest of the four rocky planets nearest
+    the Sun. Earth has one natural satellite, the Moon, which helps cause the tides.
+    The Earth's tilted axis causes the seasons - use your control panel to find out
+    more !
+  ks4Text: Earth is the only known planet with liquid water on its surface and is
+    the largest of the four rocky planets nearest the Sun. It has one natural satellite,
+    the Moon, which is responsible for the tides. Humans have also launched many
+    artificial satellites to help us study the Earth and communicate with each other
+    - can you spot one? The Earth's tilted axis causes the seasons - use your control
+    panel to find out more!
+  ks5Text: "Earth is the only known planet with stable liquid water on its surface
+    and is the largest of the four rocky planets nearest the Sun. Its atmosphere,
+    magnetic field and moderate temperatures make it the only known planet capable
+    of supporting life. Earth has one natural satellite, the Moon, whose gravitational
+    pull is the main cause of the tides, while humans have launched many artificial
+    satellites for communication, navigation and Earth observation - can you spot
+    one? The Earth's 23.5\xB0 axial tilt causes the seasons by changing the angle
+    and duration of sunlight throughout the year - use your control panel to find
+    out more!"
 --- !u!1 &1848928124
 GameObject:
   m_ObjectHideFlags: 0
@@ -28935,6 +29687,67 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1904841636}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1906563290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906563291}
+  - component: {fileID: 1906563292}
+  m_Layer: 0
+  m_Name: Education Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1906563291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906563290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.442076, y: -6.656385, z: -14.287297}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1906563292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906563290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae2fb8aa78b44bfea5da571b36f2613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidBelt: {fileID: 1375737368}
+  ceres: {fileID: 487324547}
+  pluto: {fileID: 144797998}
+  satellites: {fileID: 137581950}
+  planets:
+  - {fileID: 590687545}
+  - {fileID: 291298641}
+  - {fileID: 583280009}
+  - {fileID: 2067402637}
+  - {fileID: 1497327134}
+  - {fileID: 823163243}
+  - {fileID: 1443332459}
+  - {fileID: 1690885620}
+  - {fileID: 1966392770}
+  teleportDropdown: {fileID: 1736041316}
+  asteroidButton: {fileID: 1791584455}
+  satelliteButton: {fileID: 723972033}
 --- !u!1 &1907879047
 GameObject:
   m_ObjectHideFlags: 0
@@ -29952,6 +30765,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 144797997}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1966392770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 144797997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144797998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab84ed7ff64d7948817b9dc90f861a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1986870012 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4467512688691508796, guid: 83e362115e2285046a99763388928181,
@@ -30137,7 +30962,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1, y: 1.7}
-  m_SizeDelta: {x: 40, y: 25}
+  m_SizeDelta: {x: 40, y: 27.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990640412
 MonoBehaviour:
@@ -31029,6 +31854,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 960432831}
   m_SourcePrefab: {fileID: 100100000, guid: 83e362115e2285046a99763388928181, type: 3}
+--- !u!114 &2067402637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3180459409409840700, guid: 83e362115e2285046a99763388928181,
+    type: 3}
+  m_PrefabInstance: {fileID: 2067402636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab84ed7ff64d7948817b9dc90f861a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2076461259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d4da7467773bf11428b984647c6847a8,
@@ -34602,3 +35439,4 @@ SceneRoots:
   - {fileID: 1375737369}
   - {fileID: 952854082}
   - {fileID: 137581951}
+  - {fileID: 1906563291}
