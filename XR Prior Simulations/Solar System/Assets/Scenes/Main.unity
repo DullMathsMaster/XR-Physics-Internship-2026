@@ -2178,6 +2178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 210586370}
+  backgroundRect: {fileID: 748303890}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Saturn is the second largest planet in the Solar System and is a gas giant
     like Jupiter. It is famous for its bright rings, which are made mostly of ice.
   ks3Text: Saturn is the second largest planet in the Solar System and is a gas giant
@@ -4759,6 +4762,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 1899894308}
+  backgroundRect: {fileID: 1459015721}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Venus is the second planet from the Sun. It is the hottest planet in our
     Solar System because it has a very thick atmosphere. Venus is almost the same
     size as Earth, so it is like Earth's "twin".
@@ -8628,6 +8634,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 2055725042}
+  backgroundRect: {fileID: 1907879048}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Mars is the fourth planet from the Sun and is known as the "Red Planet"
     because of its dusty red surface. It is the furthest rocky planet from the Sun.
     We have sent robots called rovers to explore Mars to learn more about it.
@@ -10718,6 +10727,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 1278055245}
+  backgroundRect: {fileID: 1299285640}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: 'Uranus is an ice giant made of water. Uranus spins on its side, making
     it different from all the other planets. '
   ks3Text: "Uranus is an ice giant made of water, ammonia and methane. The methane
@@ -14817,6 +14829,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 1617905396}
+  backgroundRect: {fileID: 1409508090}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Pluto is a dwarf planet that orbits far beyond Neptune. It used to be
     called the ninth planet, but scientists now classify it as a dwarf planet because
     they discovered many similar objects nearby.
@@ -15564,7 +15579,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 45, y: 30}
+  m_SizeDelta: {x: 45, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994395603
 MonoBehaviour:
@@ -20093,6 +20108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 873531331}
+  backgroundRect: {fileID: 1817830010}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Can you see how the Earth is tilted? This is what causes the seasons!
     When your part of the Earth tilts towards the Sun, it is summer. When it tilts
     away from the Sun, it is winter.
@@ -22542,6 +22560,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 1990640412}
+  backgroundRect: {fileID: 994395602}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Mercury is the closest planet to the Sun. It is the smallest planet in
     our Solar System and has a rocky surface covered in craters.
   ks3Text: Mercury is the closest planet to the Sun and the smallest planet in our
@@ -25283,6 +25304,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 845719446}
+  backgroundRect: {fileID: 871263447}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Asteroids are rocky objects that orbit the Sun. Most are found in the
     asteroid belt between Mars and Jupiter. The asteroids here have been made much
     bigger so you can see them, but many real asteroids are much smaller than this.
@@ -25742,6 +25766,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 156307866}
+  backgroundRect: {fileID: 1814351584}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Neptune is the planet furthest from the Sun. It is an ice giant with a
     deep blue colour. Neptune has the strongest winds of any planet in the Solar
     System, blowing faster than 1,000 mph!
@@ -28756,6 +28783,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 627116341}
+  backgroundRect: {fileID: 1137873877}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Jupiter is the largest planet in the Solar System. It is made mostly of
     gas, so it does not have a solid surface like Earth. Can you spot the Great Red
     Spot? It is a giant storm that is bigger than Earth!
@@ -28953,6 +28983,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionText: {fileID: 375090875}
+  backgroundRect: {fileID: 899749178}
+  verticalPadding: 5
+  minimumHeight: 0
   ks2Text: Earth is the third planet from the Sun and the only known planet with
     liquid water on its surface. It is our home and has one natural satellite, the
     Moon. The Moon helps cause the tides in our oceans.
@@ -30917,7 +30950,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1, y: 1.7}
-  m_SizeDelta: {x: 40, y: 25}
+  m_SizeDelta: {x: 40, y: 27.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990640412
 MonoBehaviour:
