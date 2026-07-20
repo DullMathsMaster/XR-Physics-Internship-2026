@@ -34,6 +34,10 @@ public class PlanetController : MonoBehaviour
     private float unscaledOrbitAngularVelocity;
     private float scaledRotationAngularVelocity;
 
+    public bool useOrbitalInclination = true;
+
+    private float currentOrbitAngle;
+
     void Start()
     {
         // Start all planets in enlarged model scale.
@@ -118,15 +122,10 @@ public class PlanetController : MonoBehaviour
                 );
         }
 
-        transform.Rotate(
-            Vector3.up,
-            Random.Range(0f, 360f)
-        );
+        currentOrbitAngle =
+            Random.Range(0f, 360f);
 
-        transform.Rotate(
-            Vector3.forward,
-            orbitalInclination
-        );
+        UpdateOrbitRotation();
     }
 
     void Update()
@@ -144,10 +143,11 @@ public class PlanetController : MonoBehaviour
             8760f /
             earthHoursPerDay;
 
-        transform.Rotate(
-            Vector3.up,
-            scaledOrbitAngularVelocity * Time.deltaTime
-        );
+        currentOrbitAngle +=
+            scaledOrbitAngularVelocity *
+            Time.deltaTime;
+
+        UpdateOrbitRotation();
 
         float rotationDirection =
             clockwiseRotation ? -1f : 1f;
@@ -168,6 +168,28 @@ public class PlanetController : MonoBehaviour
                 scaledPlanetDiameter,
                 scaledPlanetDiameter
             );
+    }
+
+    private void UpdateOrbitRotation()
+    {
+        float inclination =
+            useOrbitalInclination
+                ? orbitalInclination
+                : 0f;
+
+        transform.localRotation =
+            Quaternion.Euler(
+                0f,
+                currentOrbitAngle,
+                inclination
+            );
+    }
+
+    public void SetOrbitalInclination(bool enabled)
+    {
+        useOrbitalInclination = enabled;
+
+        UpdateOrbitRotation();
     }
 
     public void SetSpeed(float value)
