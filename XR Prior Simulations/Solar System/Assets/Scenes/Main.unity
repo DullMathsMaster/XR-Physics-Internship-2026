@@ -10766,6 +10766,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8090467213099385311}
+        m_TargetAssemblyTypeName: ToggleDropdown, Assembly-CSharp
+        m_MethodName: ToggleVisibility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &723972034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33226,13 +33238,14 @@ GameObject:
   - component: {fileID: 2977085801793612342}
   - component: {fileID: 6058507577263850122}
   - component: {fileID: 8090467213099385310}
+  - component: {fileID: 8090467213099385311}
   m_Layer: 0
   m_Name: Satellite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1807393888853805448
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33299,8 +33312,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10.5
+  m_fontSizeBase: 10.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -34106,8 +34119,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1553043488896135815}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 0.33333334, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34115,11 +34128,11 @@ RectTransform:
   - {fileID: 4627926942774097148}
   - {fileID: 1974800502836559046}
   m_Father: {fileID: 2076754138}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 25}
-  m_SizeDelta: {x: 144.58, y: 22.29}
+  m_AnchoredPosition: {x: -45, y: -40}
+  m_SizeDelta: {x: 100, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6702881634029401837
 GameObject:
@@ -34345,7 +34358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stationary
+  m_text: Equatorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -34372,11 +34385,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 10.5
+  m_fontSizeBase: 10.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_fontSizeMin: 6
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -34464,13 +34477,15 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Stationary
+    - m_Text: Equatorial
       m_Image: {fileID: 0}
-    - m_Text: Orbit
+    - m_Text: Polar
       m_Image: {fileID: 0}
     - m_Text: Geostationary
       m_Image: {fileID: 0}
-    - m_Text: Other satellite thing
+    - m_Text: Inclined
+      m_Image: {fileID: 0}
+    - m_Text: Retrograde
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -34488,6 +34503,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &8090467213099385311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553043488896135815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40480677921489f4e97e233f6951348d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdownObject: {fileID: 1553043488896135815}
 --- !u!114 &8284891001459958506
 MonoBehaviour:
   m_ObjectHideFlags: 0
