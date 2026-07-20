@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Meta Quest version of Board.cs
 public class Board : MonoBehaviour
 {
     [Header("Prefabs / hierarchy")]
@@ -9,8 +8,7 @@ public class Board : MonoBehaviour
     public GameObject pool;
     public GameObject container;
 
-    [Header("Board + resize handles")]
-    public Transform boardFollowTarget;
+    [Header("Resize handles")]
     public Transform leftHandle;
     public Transform rightHandle;
     public Transform topHandle;
@@ -25,7 +23,6 @@ public class Board : MonoBehaviour
     [Header("Collider")]
     public BoxCollider box;
 
-    [HideInInspector] public bool boardGrabbed;
     [HideInInspector] public bool leftGrabbed;
     [HideInInspector] public bool rightGrabbed;
     [HideInInspector] public bool topGrabbed;
@@ -45,11 +42,9 @@ public class Board : MonoBehaviour
     private Vector3 topLeft = new Vector3(-1, 0, 1);
     private Vector3 bottomRight = new Vector3(1, 0, -1);
 
-    private const float halfCellSize = 0.03f; // 0.06 / 2
+    private const float halfCellSize = 0.03f;
 
     public static Board instance;
-
-    private float grabTimer = 0f;
 
     private void Awake()
     {
@@ -63,44 +58,27 @@ public class Board : MonoBehaviour
 
     private void Update()
     {
-        UpdateBoardGrab();
         UpdateResizeHandles();
 
-        topLeft = new Vector3(leftHandle.localPosition.x / halfCellSize + 1f, 0f, topHandle.localPosition.z / halfCellSize - 1f);
-        bottomRight = new Vector3(rightHandle.localPosition.x / halfCellSize - 1f, 0f, bottomHandle.localPosition.z / halfCellSize + 1f);
+        if (leftHandle != null && topHandle != null)
+        {
+            topLeft = new Vector3(
+                leftHandle.localPosition.x / halfCellSize + 1f,
+                0f,
+                topHandle.localPosition.z / halfCellSize - 1f
+            );
+        }
+
+        if (rightHandle != null && bottomHandle != null)
+        {
+            bottomRight = new Vector3(
+                rightHandle.localPosition.x / halfCellSize - 1f,
+                0f,
+                bottomHandle.localPosition.z / halfCellSize + 1f
+            );
+        }
 
         GenerateGrid();
-    }
-
-    private void UpdateBoardGrab()
-    {
-        if (boardFollowTarget == null)
-            return;
-
-        if (boardGrabbed)
-        {
-            SetHandleColor(Color.Lerp(Color.blue, Color.white, grabTimer));
-
-            if (grabTimer <= 0f)
-            {
-                transform.position = boardFollowTarget.position;
-
-                Quaternion rot = transform.rotation;
-                Vector3 euler = rot.eulerAngles;
-                euler.y = boardFollowTarget.rotation.eulerAngles.y;
-                rot.eulerAngles = euler;
-                transform.rotation = rot;
-            }
-            else
-            {
-                grabTimer -= Time.deltaTime;
-            }
-        }
-        else
-        {
-            grabTimer = 1f;
-            SetHandleColor(Color.white);
-        }
     }
 
     private void SetHandleColor(Color color)
@@ -118,7 +96,7 @@ public class Board : MonoBehaviour
         float topBound = halfCellSize * (topLeft.z + 1f);
         float bottomBound = halfCellSize * (bottomRight.z - 1f);
 
-        if (topGrabbed)
+        if (topGrabbed && topHandle != null)
         {
             topHandle.localPosition =
                 Vector3.Project(transform.InverseTransformPoint(topHandle.position), Vector3.forward) + topBottomOffset;
@@ -128,12 +106,16 @@ public class Board : MonoBehaviour
                 topHandle.localPosition = new Vector3(0f, 0f, bottomBound + globalOffset) + topBottomOffset;
             }
         }
-        else
+        else if (topHandle != null)
         {
-            topHandle.localPosition = new Vector3(0f, 0f, halfCellSize * Mathf.Round(topLeft.z + 0.5f)) + topBottomOffset;
+            topHandle.localPosition = new Vector3(
+                0f,
+                0f,
+                halfCellSize * Mathf.Round(topLeft.z + 0.5f)
+            ) + topBottomOffset;
         }
 
-        if (bottomGrabbed)
+        if (bottomGrabbed && bottomHandle != null)
         {
             bottomHandle.localPosition =
                 Vector3.Project(transform.InverseTransformPoint(bottomHandle.position), Vector3.forward) + topBottomOffset;
@@ -143,15 +125,19 @@ public class Board : MonoBehaviour
                 bottomHandle.localPosition = new Vector3(0f, 0f, topBound - globalOffset) + topBottomOffset;
             }
         }
-        else
+        else if (bottomHandle != null)
         {
-            bottomHandle.localPosition = new Vector3(0f, 0f, halfCellSize * Mathf.Round(bottomRight.z - 0.5f)) + topBottomOffset;
+            bottomHandle.localPosition = new Vector3(
+                0f,
+                0f,
+                halfCellSize * Mathf.Round(bottomRight.z - 0.5f)
+            ) + topBottomOffset;
         }
 
         float leftBound = halfCellSize * (topLeft.x - 1f);
         float rightBound = halfCellSize * (bottomRight.x + 1f);
 
-        if (leftGrabbed)
+        if (leftGrabbed && leftHandle != null)
         {
             leftHandle.localPosition =
                 Vector3.Project(transform.InverseTransformPoint(leftHandle.position), Vector3.right) + rightLeftOffset;
@@ -161,12 +147,16 @@ public class Board : MonoBehaviour
                 leftHandle.localPosition = new Vector3(rightBound - globalOffset, 0f, 0f) + rightLeftOffset;
             }
         }
-        else
+        else if (leftHandle != null)
         {
-            leftHandle.localPosition = new Vector3(halfCellSize * Mathf.Round(topLeft.x - 0.5f), 0f, 0f) + rightLeftOffset;
+            leftHandle.localPosition = new Vector3(
+                halfCellSize * Mathf.Round(topLeft.x - 0.5f),
+                0f,
+                0f
+            ) + rightLeftOffset;
         }
 
-        if (rightGrabbed)
+        if (rightGrabbed && rightHandle != null)
         {
             rightHandle.localPosition =
                 Vector3.Project(transform.InverseTransformPoint(rightHandle.position), Vector3.right) + rightLeftOffset;
@@ -176,10 +166,16 @@ public class Board : MonoBehaviour
                 rightHandle.localPosition = new Vector3(leftBound + globalOffset, 0f, 0f) + rightLeftOffset;
             }
         }
-        else
+        else if (rightHandle != null)
         {
-            rightHandle.localPosition = new Vector3(halfCellSize * Mathf.Round(bottomRight.x + 0.5f), 0f, 0f) + rightLeftOffset;
+            rightHandle.localPosition = new Vector3(
+                halfCellSize * Mathf.Round(bottomRight.x + 0.5f),
+                0f,
+                0f
+            ) + rightLeftOffset;
         }
+
+        SetHandleColor((leftGrabbed || rightGrabbed || topGrabbed || bottomGrabbed) ? Color.blue : Color.white);
     }
 
     private float width => Mathf.Abs(bottomRight.x - topLeft.x);
@@ -198,11 +194,24 @@ public class Board : MonoBehaviour
         if (box != null)
         {
             box.center = (topLeft + bottomRight) * halfCellSize / 2f;
-            box.size = new Vector3((width - 1f) * halfCellSize, 0.01f, (height - 1f) * halfCellSize);
+            box.size = new Vector3(
+                (width - 1f) * halfCellSize,
+                0.01f,
+                (height - 1f) * halfCellSize
+            );
         }
 
-        topBottomOffset = new Vector3((topLeft.x + bottomRight.x) / 2f * halfCellSize, 0f, 0f);
-        rightLeftOffset = new Vector3(0f, 0f, (topLeft.z + bottomRight.z) / 2f * halfCellSize);
+        topBottomOffset = new Vector3(
+            (topLeft.x + bottomRight.x) / 2f * halfCellSize,
+            0f,
+            0f
+        );
+
+        rightLeftOffset = new Vector3(
+            0f,
+            0f,
+            (topLeft.z + bottomRight.z) / 2f * halfCellSize
+        );
 
         if (topHandle != null) topHandle.localScale = new Vector3(0.015f, halfCellSize * (width / 2f), 0.015f);
         if (bottomHandle != null) bottomHandle.localScale = new Vector3(0.015f, halfCellSize * (width / 2f), 0.015f);
