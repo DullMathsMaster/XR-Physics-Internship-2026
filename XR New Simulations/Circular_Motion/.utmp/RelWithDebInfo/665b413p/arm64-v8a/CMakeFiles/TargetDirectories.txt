@@ -1,0 +1,5 @@
+C:/Users/ginae/XR-Physics-Internship-2026/XR New Simulations/Circular_Motion/.utmp/RelWithDebInfo/665b413p/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/ginae/XR-Physics-Internship-2026/XR New Simulations/Circular_Motion/.utmp/RelWithDebInfo/665b413p/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/ginae/XR-Physics-Internship-2026/XR New Simulations/Circular_Motion/.utmp/RelWithDebInfo/665b413p/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/ginae/XR-Physics-Internship-2026/XR New Simulations/Circular_Motion/.utmp/RelWithDebInfo/665b413p/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/ginae/XR-Physics-Internship-2026/XR New Simulations/Circular_Motion/.utmp/RelWithDebInfo/665b413p/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

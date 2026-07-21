@@ -14,7 +14,11 @@ public class VerletRopeVisualizer : MonoBehaviour
     private RopeNode[] nodes;
     private float maxSegmentLength;
 
-    // Changed to class so array references modify smoothly without data loss
+    [Header("Collision Settings")]
+    public bool enableFloorCollision = true;
+    public float floorY = 0f;    
+    public float nodeRadius = 0.05f; 
+
     private class RopeNode
     {
         public Vector3 currentPosition;
@@ -57,6 +61,25 @@ public class VerletRopeVisualizer : MonoBehaviour
             nodes[i].previousPosition = nodes[i].currentPosition;
             
             nodes[i].currentPosition += velocity + gravity * Time.deltaTime * Time.deltaTime;
+        }
+    }
+
+    void HandleFloorCollision()
+    {
+        if (!enableFloorCollision) return;
+
+        float minHeight = floorY + nodeRadius;
+
+        for (int i = 0; i < segmentCount; i++)
+        {
+            if (nodes[i].currentPosition.y < minHeight)
+            {
+                nodes[i].currentPosition.y = minHeight;
+                
+                // Frictional effect 
+                nodes[i].previousPosition.x = Mathf.Lerp(nodes[i].previousPosition.x, nodes[i].currentPosition.x, 0.2f);
+                nodes[i].previousPosition.z = Mathf.Lerp(nodes[i].previousPosition.z, nodes[i].currentPosition.z, 0.2f);
+            }
         }
     }
 
@@ -110,6 +133,7 @@ public class VerletRopeVisualizer : MonoBehaviour
                     nodeB.currentPosition -= changeAmount * 0.5f;
                 }
             }
+            HandleFloorCollision();
         }
     }
 
