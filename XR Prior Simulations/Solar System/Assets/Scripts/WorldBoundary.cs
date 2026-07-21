@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorldBoundary : MonoBehaviour
 {
-    public float maxRadius = 10000000f;
+    public float maxRadius = 800f;
 
     // Update is called once per frame
     void LateUpdate() {

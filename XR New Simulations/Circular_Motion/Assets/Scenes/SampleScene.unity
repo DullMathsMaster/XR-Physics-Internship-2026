@@ -505,7 +505,7 @@ ConfigurableJoint:
   m_SwapBodies: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -619,7 +619,7 @@ Transform:
   m_GameObject: {fileID: 1552178055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -638,7 +638,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 2067426668}
-  forceScale: 0.1
+  stringLength: 1
+  ballRadius: 0.08
+  arrowPrefab: {fileID: 4981013175232635622, guid: 4040550e000d4774286c6a637e028a81, type: 3}
+  forceScale: 0.05
+  gravityColor: {r: 1, g: 0, b: 0, a: 1}
+  tensionColor: {r: 0, g: 0, b: 1, a: 1}
+  netForceColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1001 &1930198737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -764,6 +770,9 @@ MonoBehaviour:
   constraintIterations: 5
   gravity: {x: 0, y: -9.81, z: 0}
   drag: 0.98
+  enableFloorCollision: 1
+  floorY: -2
+  nodeRadius: 0.05
 --- !u!120 &2067426663
 LineRenderer:
   serializedVersion: 2
@@ -1076,9 +1085,9 @@ Transform:
   m_GameObject: {fileID: 2067426660}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11731488, y: 0.11731488, z: 0.11731488}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
