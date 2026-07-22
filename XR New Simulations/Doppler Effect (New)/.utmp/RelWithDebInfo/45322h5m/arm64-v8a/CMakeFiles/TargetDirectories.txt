@@ -1,0 +1,5 @@
+/Users/josephtucker/Documents/GitHub/XR-Physics-Internship-2026/XR New Simulations/Doppler Effect (New)/.utmp/RelWithDebInfo/45322h5m/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/josephtucker/Documents/GitHub/XR-Physics-Internship-2026/XR New Simulations/Doppler Effect (New)/.utmp/RelWithDebInfo/45322h5m/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/josephtucker/Documents/GitHub/XR-Physics-Internship-2026/XR New Simulations/Doppler Effect (New)/.utmp/RelWithDebInfo/45322h5m/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/josephtucker/Documents/GitHub/XR-Physics-Internship-2026/XR New Simulations/Doppler Effect (New)/.utmp/RelWithDebInfo/45322h5m/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/josephtucker/Documents/GitHub/XR-Physics-Internship-2026/XR New Simulations/Doppler Effect (New)/.utmp/RelWithDebInfo/45322h5m/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

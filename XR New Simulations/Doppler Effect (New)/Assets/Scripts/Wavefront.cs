@@ -13,12 +13,17 @@ public class Wavefront : MonoBehaviour
     [Range(0f, 1f)]
     public float endingAlpha = 0f;
 
+    [Header("Sonic boom")]
+    public Transform listener;
+    public SonicBoomPlayer sonicBoomPlayer;
+
     private static readonly int ShellAlphaID =
         Shader.PropertyToID("_ShellAlpha");
 
     private Renderer waveRenderer;
     private Material waveMaterial;
     private float currentRadius;
+    private bool reachedListener;
 
     private void Awake()
     {
@@ -51,6 +56,8 @@ public class Wavefront : MonoBehaviour
         transform.localScale =
             Vector3.one * diameter;
 
+        CheckListenerHit();
+
         float fadeProgress = Mathf.InverseLerp(
             0f,
             maximumRadius,
@@ -68,6 +75,29 @@ public class Wavefront : MonoBehaviour
         if (currentRadius >= maximumRadius)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void CheckListenerHit()
+    {
+        if (
+            reachedListener ||
+            listener == null ||
+            sonicBoomPlayer == null
+        )
+        {
+            return;
+        }
+
+        float distanceToListener = Vector3.Distance(
+            transform.position,
+            listener.position
+        );
+
+        if (currentRadius >= distanceToListener)
+        {
+            reachedListener = true;
+            sonicBoomPlayer.TryPlayBoom();
         }
     }
 

@@ -7,63 +7,48 @@ public class MachSpeedController : MonoBehaviour
     [Header("Doppler Sphere Components")]
     [SerializeField] private DopplerSphere dopplerSphere;
     [SerializeField] private WavefrontEmitter wavefrontEmitter;
+    [SerializeField] private SonicBoomPlayer sonicBoomPlayer;
 
     [Header("UI")]
     [SerializeField] private Slider machSlider;
     [SerializeField] private TMP_Text speedText;
 
-    private const float FixedSphereSpeed = 5f;
-    private const float MinimumMach = 0.1f;
-    private const float MaximumMach = 3f;
+    [Header("Fixed Sound Settings")]
+    [SerializeField] private float fixedSoundSpeed = 5f;
 
     [Header("Starting Mach Number")]
-    [Range(MinimumMach, MaximumMach)]
-    [SerializeField] private float startingMach = 0.5f;
+    [Range(0f, 1f)]
+    [SerializeField] private float startingMach = 0f;
+
+    [Header("Sonic Boom Threshold")]
+    [Range(0.9f, 1f)]
+    [SerializeField] private float sonicThreshold = 0.99f;
+
+    private const float MinimumMach = 0f;
+    private const float MaximumMach = 1f;
 
     private void Awake()
     {
         if (dopplerSphere == null)
         {
-            dopplerSphere = GetComponent<DopplerSphere>();
+            dopplerSphere = FindFirstObjectByType<DopplerSphere>();
         }
 
         if (wavefrontEmitter == null)
         {
-            wavefrontEmitter = GetComponent<WavefrontEmitter>();
+            wavefrontEmitter = FindFirstObjectByType<WavefrontEmitter>();
+        }
+
+        if (sonicBoomPlayer == null)
+        {
+            sonicBoomPlayer = FindFirstObjectByType<SonicBoomPlayer>();
         }
     }
 
     private void Start()
     {
-        if (dopplerSphere == null)
+        if (!CheckReferences())
         {
-            Debug.LogError(
-                "MachSpeedController could not find DopplerSphere.",
-                this
-            );
-
-            enabled = false;
-            return;
-        }
-
-        if (wavefrontEmitter == null)
-        {
-            Debug.LogError(
-                "MachSpeedController could not find WavefrontEmitter.",
-                this
-            );
-
-            enabled = false;
-            return;
-        }
-
-        if (machSlider == null)
-        {
-            Debug.LogError(
-                "MachSpeedController: Mach Slider has not been assigned.",
-                this
-            );
-
             enabled = false;
             return;
         }
@@ -73,45 +58,92 @@ public class MachSpeedController : MonoBehaviour
         machSlider.wholeNumbers = false;
         machSlider.value = startingMach;
 
-        machSlider.onValueChanged.AddListener(SetMachNumber);
-
         SetMachNumber(machSlider.value);
-    }
-
-    private void OnDestroy()
-    {
-        if (machSlider != null)
-        {
-            machSlider.onValueChanged.RemoveListener(SetMachNumber);
-        }
     }
 
     public void SetMachNumber(float machNumber)
     {
-        machNumber = Mathf.Clamp(
-            machNumber,
-            MinimumMach,
-            MaximumMach
-        );
+        machNumber = Mathf.Clamp01(machNumber);
 
-        float soundAndWaveSpeed =
-            FixedSphereSpeed / machNumber;
+        float sphereSpeed = machNumber * fixedSoundSpeed;
 
-        dopplerSphere.movementSpeed =
-            FixedSphereSpeed;
+        dopplerSphere.movementSpeed = sphereSpeed;
 
-        dopplerSphere.speedOfSound =
-            soundAndWaveSpeed;
+        dopplerSphere.speedOfSound = fixedSoundSpeed;
+        wavefrontEmitter.waveSpeed = fixedSoundSpeed;
 
-        wavefrontEmitter.waveSpeed =
-            soundAndWaveSpeed;
+        bool sonicMode = machNumber >= sonicThreshold;
 
-        if (speedText != null)
+        dopplerSphere.SetSonicMode(sonicMode);
+
+        if (sonicBoomPlayer != null)
+        {
+            sonicBoomPlayer.SetArmed(sonicMode);
+        }
+
+        UpdateText(machNumber, sphereSpeed, sonicMode);
+    }
+
+    private void UpdateText(
+        float machNumber,
+        float sphereSpeed,
+        bool sonicMode
+    )
+    {
+        if (speedText == null)
+        {
+            return;
+        }
+
+        if (sonicMode)
         {
             speedText.text =
                 $"Mach {machNumber:F2}\n" +
-                $"Sphere speed: {FixedSphereSpeed:F1} units/s\n" +
-                $"Sound speed: {soundAndWaveSpeed:F2} units/s";
+                $"Sphere speed: {sphereSpeed:F2} units/s\n" +
+                "Sonic boom mode";
         }
+        else
+        {
+            speedText.text =
+                $"Mach {machNumber:F2}\n" +
+                $"Sphere speed: {sphereSpeed:F2} units/s";
+        }
+    }
+
+    private bool CheckReferences()
+    {
+        bool referencesValid = true;
+
+        if (dopplerSphere == null)
+        {
+            Debug.LogError(
+                "MachSpeedController could not find DopplerSphere.",
+                this
+            );
+
+            referencesValid = false;
+        }
+
+        if (wavefrontEmitter == null)
+        {
+            Debug.LogError(
+                "MachSpeedController could not find WavefrontEmitter.",
+                this
+            );
+
+            referencesValid = false;
+        }
+
+        if (machSlider == null)
+        {
+            Debug.LogError(
+                "MachSpeedController: Mach Slider has not been assigned.",
+                this
+            );
+
+            referencesValid = false;
+        }
+
+        return referencesValid;
     }
 }

@@ -1,0 +1,2 @@
+/Users/josephtucker/Documents/GitHub/XR-Physics-Internship-2026/XR New Simulations/Doppler Effect (New)/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt
+/Users/josephtucker/Documents/GitHub/XR-Physics-Internship-2026/XR New Simulations/Doppler Effect (New)/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/CMakeLists.txt

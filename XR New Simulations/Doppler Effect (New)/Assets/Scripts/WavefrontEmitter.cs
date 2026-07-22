@@ -16,15 +16,37 @@ public class WavefrontEmitter : MonoBehaviour
     [Header("Spawn position")]
     public Vector3 localSpawnOffset;
 
+    [Header("Sonic boom")]
+    public Transform listener;
+    public SonicBoomPlayer sonicBoomPlayer;
+
     private float timer;
 
     private void Start()
     {
-        timer = emitImmediately ? emissionInterval : 0f;
+        if (listener == null && Camera.main != null)
+        {
+            listener = Camera.main.transform;
+        }
+
+        if (sonicBoomPlayer == null)
+        {
+            sonicBoomPlayer =
+                FindFirstObjectByType<SonicBoomPlayer>();
+        }
+
+        timer = emitImmediately
+            ? emissionInterval
+            : 0f;
     }
 
     private void Update()
     {
+        if (emissionInterval <= 0f)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
 
         while (timer >= emissionInterval)
@@ -73,5 +95,8 @@ public class WavefrontEmitter : MonoBehaviour
 
         wavefront.expansionSpeed = waveSpeed;
         wavefront.maximumRadius = maximumRadius;
+
+        wavefront.listener = listener;
+        wavefront.sonicBoomPlayer = sonicBoomPlayer;
     }
 }
