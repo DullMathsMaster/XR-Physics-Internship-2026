@@ -1,0 +1,10 @@
+# ninja log v5
+1	974	1784562226804792373	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	70a06b9b2e4dfa4c
+1	983	1784562226812576999	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	740c14b2464c92ef
+0	996	1784562226827277751	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	6367cf2b462e1ddb
+1	1003	1784562226834157168	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	f42eaaeb686dbd36
+0	1058	1784562226889492633	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	733f10047389e17d
+2	1123	1784562226953681266	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a39eb0c41857038c
+1	1310	1784562227139686747	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	d03036ca13ab9ff3
+0	1409	1784562227240223010	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	a387658e22f24536
+1409	1496	1784562227330219021	/Users/josephtucker/Documents/GitHub/XR-Physics-Internship-2026/XR New Simulations/Doppler Effect/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/501t6j3i/obj/arm64-v8a/libgame.so	3a24420a5e129e46
