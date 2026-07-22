@@ -49,43 +49,40 @@ public class ForceVisualiser : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (pivot == null || rb == null) return;
+        if (arrowPrefab == null || pivot == null || rb == null) return;
+
         Vector3 ballPos = transform.position;
 
-        // --- Calculate Physics Forces ---
+        // --- Calculate Forces using current render frame position ---
         Vector3 stringVec = pivot.position - ballPos;
         float dist = stringVec.magnitude;
         if (dist <= 0.0001f) return;
+
         Vector3 stringDir = stringVec / dist;
-        currentGravityForce = Physics.gravity * rb.mass;
-        currentTensionForce = Vector3.zero;
+        Vector3 gravityForce = Physics.gravity * rb.mass;
+        Vector3 tensionForce = Vector3.zero;
 
         if (dist >= stringLength)
         {
+            // Use current velocity
             Vector3 velocity = rb.linearVelocity; // Use rb.velocity on Unity 2022 or older
             Vector3 radialVel = Vector3.Project(velocity, stringDir);
             Vector3 tangentialVel = velocity - radialVel;
 
             float centripetal = (rb.mass * tangentialVel.sqrMagnitude) / dist;
-            float gravComp = -Vector3.Dot(currentGravityForce, stringDir);
+            float gravComp = -Vector3.Dot(gravityForce, stringDir);
             float tensionMag = Mathf.Max(0f, gravComp + centripetal);
-            currentTensionForce = stringDir * tensionMag;
+            tensionForce = stringDir * tensionMag;
         }
-        currentNetForce = currentTensionForce + currentGravityForce;
-    }
 
-    private void Update()
-    {
-        if (arrowPrefab == null) return;
+        Vector3 netForce = tensionForce + gravityForce;
 
-        // --- Render Arrows Every Frame at Current Ball Position ---
-        Vector3 ballPos = transform.position;
-
-        RenderArrow(gravityArrow, ballPos, currentGravityForce, gravityColor);
-        RenderArrow(tensionArrow, ballPos, currentTensionForce, tensionColor);
-        RenderArrow(netForceArrow, ballPos, currentNetForce, netForceColor);
+        // --- Render Arrows ---
+        RenderArrow(gravityArrow, ballPos, gravityForce, gravityColor);
+        RenderArrow(tensionArrow, ballPos, tensionForce, tensionColor);
+        RenderArrow(netForceArrow, ballPos, netForce, netForceColor);
     }
 
 
@@ -105,4 +102,3 @@ public class ForceVisualiser : MonoBehaviour
 
     }
 }
-
