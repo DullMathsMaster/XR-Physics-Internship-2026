@@ -31,6 +31,15 @@
 .vs/
 .idea/
 
-APK Files\Projectile Motion APK
-XR New Simulations\Hand Rules\Assets\charizard_006_sv.glb
-XR New Simulations\Hand Rules\Assets\Animations
+
+# Wilson's ignore list
+APK Files/Projectile Motion APK/
+XR New Simulations/Hand Rules/Assets/charizard_006_sv.glb
+XR New Simulations/Hand Rules/Assets/Animations
+Testing/
+APK Files/Testing APK/
+APK Files/
+XR New Simulations/Hand Rules/Assets/MediaPipeUnity.0.16.3.unitypackage.meta
+XR New Simulations/Hand Rules/Assets/MediaPipeUnity.0.16.3.unitypackage
+XR New Simulations/Hand Rules/Assets/com.github.homuler.mediapipe-0.16.3.tgz
+XR New Simulations/Hand Rules/Assets/MediaPipeUnityPlugin-all.zip
