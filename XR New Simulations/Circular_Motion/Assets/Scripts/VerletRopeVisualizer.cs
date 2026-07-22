@@ -6,7 +6,7 @@ public class VerletRopeVisualizer : MonoBehaviour
     public Transform ballTransform;
     public int segmentCount = 15;
     public float ropeLength = 1.0f;
-    public int constraintIterations = 5;
+    public int constraintIterations = 15;
     public Vector3 gravity = new Vector3(0, -9.81f, 0);
     [Range(0f, 1f)] public float drag = 0.98f;
 
@@ -25,7 +25,7 @@ public class VerletRopeVisualizer : MonoBehaviour
         public Vector3 previousPosition;
     }
 
-    void Start()
+    private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = segmentCount;
@@ -43,28 +43,32 @@ public class VerletRopeVisualizer : MonoBehaviour
         }
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         if (ballTransform == null) return;
 
         Simulate();
         ApplyConstraints();
+    }
+
+    private void LateUpdate()
+    {
         DrawRope();
     }
 
-    void Simulate()
+    private void Simulate()
     {
+        float subTimeStep = Time.fixedDeltaTime;
+
         for (int i = 0; i < segmentCount; i++)
         {
-            // Calculate velocity with a dampening drag factor
             Vector3 velocity = (nodes[i].currentPosition - nodes[i].previousPosition) * drag;
             nodes[i].previousPosition = nodes[i].currentPosition;
-            
-            nodes[i].currentPosition += velocity + gravity * Time.deltaTime * Time.deltaTime;
+            nodes[i].currentPosition += velocity + gravity * (subTimeStep * subTimeStep);
         }
     }
 
-    void HandleFloorCollision()
+    private void HandleFloorCollision()
     {
         if (!enableFloorCollision) return;
 
@@ -75,33 +79,16 @@ public class VerletRopeVisualizer : MonoBehaviour
             if (nodes[i].currentPosition.y < minHeight)
             {
                 nodes[i].currentPosition.y = minHeight;
-                
-                // Frictional effect 
                 nodes[i].previousPosition.x = Mathf.Lerp(nodes[i].previousPosition.x, nodes[i].currentPosition.x, 0.2f);
                 nodes[i].previousPosition.z = Mathf.Lerp(nodes[i].previousPosition.z, nodes[i].currentPosition.z, 0.2f);
             }
         }
     }
 
-    void ApplyConstraints()
+    private void ApplyConstraints()
     {
         nodes[0].currentPosition = transform.position;
         nodes[segmentCount - 1].currentPosition = ballTransform.position;
-
-        Vector3 totalDelta = ballTransform.position - transform.position;
-        float totalDistance = totalDelta.magnitude;
-
-        if (totalDistance >= ropeLength - 0.02f)
-        {
-            Vector3 direction = totalDelta.normalized;
-            for (int i = 1; i < segmentCount - 1; i++)
-            {
-                float t = (float)i / (segmentCount - 1);
-                nodes[i].currentPosition = transform.position + (direction * (totalDistance * t));
-                nodes[i].previousPosition = nodes[i].currentPosition;
-            }
-            return;
-        }
 
         for (int iteration = 0; iteration < constraintIterations; iteration++)
         {
@@ -113,7 +100,7 @@ public class VerletRopeVisualizer : MonoBehaviour
                 Vector3 delta = nodeB.currentPosition - nodeA.currentPosition;
                 float currentDist = delta.magnitude;
                 
-                if (currentDist <= 0.001f) continue;
+                if (currentDist <= 0.0001f) continue;
 
                 float error = currentDist - maxSegmentLength; 
                 Vector3 changeDir = delta / currentDist;
@@ -133,17 +120,42 @@ public class VerletRopeVisualizer : MonoBehaviour
                     nodeB.currentPosition -= changeAmount * 0.5f;
                 }
             }
+
+            nodes[0].currentPosition = transform.position;
+            nodes[segmentCount - 1].currentPosition = ballTransform.position;
+
             HandleFloorCollision();
+        }
+
+        // Tautness constraint: If distance between start and end reaches ropeLength, align inner nodes in a straight line
+        Vector3 totalVec = ballTransform.position - transform.position;
+        float totalDist = totalVec.magnitude;
+
+        if (totalDist >= ropeLength - 0.02f)
+        {
+            Vector3 straightDir = totalVec.normalized;
+            for (int i = 1; i < segmentCount - 1; i++)
+            {
+                float t = (float)i / (segmentCount - 1);
+                nodes[i].currentPosition = transform.position + straightDir * (t * totalDist);
+            }
         }
     }
 
-    void DrawRope()
+    private void DrawRope()
     {
         Vector3[] positions = new Vector3[segmentCount];
-        for (int i = 0; i < segmentCount; i++)
+        
+        if (nodes != null && nodes.Length > 0)
         {
-            positions[i] = nodes[i].currentPosition;
+            nodes[0].currentPosition = transform.position;
+            if (ballTransform != null) nodes[segmentCount - 1].currentPosition = ballTransform.position;
+
+            for (int i = 0; i < segmentCount; i++)
+            {
+                positions[i] = nodes[i].currentPosition;
+            }
+            lineRenderer.SetPositions(positions);
         }
-        lineRenderer.SetPositions(positions);
     }
 }
