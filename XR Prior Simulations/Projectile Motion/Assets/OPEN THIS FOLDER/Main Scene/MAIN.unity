@@ -2290,6 +2290,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -312
       objectReference: {fileID: 0}
+    - target: {fileID: 6832349077491088520, guid: 64859e4afa563934ab64a0abb1ca7a60,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8070049212615694930, guid: 64859e4afa563934ab64a0abb1ca7a60,
         type: 3}
       propertyPath: m_Name
@@ -2315,7 +2320,8 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6832349077491088520, guid: 64859e4afa563934ab64a0abb1ca7a60, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2465396340839820452, guid: 64859e4afa563934ab64a0abb1ca7a60,
@@ -2354,7 +2360,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 266419368}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8569129272862435870, guid: 64859e4afa563934ab64a0abb1ca7a60,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 867433619}
   m_SourcePrefab: {fileID: 100100000, guid: 64859e4afa563934ab64a0abb1ca7a60, type: 3}
 --- !u!114 &867433616 stripped
 MonoBehaviour:
@@ -2374,6 +2384,53 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 867433615}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &867433618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8569129272862435870, guid: 64859e4afa563934ab64a0abb1ca7a60,
+    type: 3}
+  m_PrefabInstance: {fileID: 867433615}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &867433619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867433618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &954284257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2707,20 +2764,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PrefabsList:
-  - imageGuid: 2c29eeed-d95c-4111-b724-80f9ff10ce86
-    imagePrefab: {fileID: 3796783204015073837, guid: 7a72fa0c0db008144a71e3c525870edd,
-      type: 3}
-  - imageGuid: aae75228-1973-4dc0-b7a2-53d1566ee402
-    imagePrefab: {fileID: 3475766866932614503, guid: ee2364ff189124547b27d49190f162ef,
-      type: 3}
   - imageGuid: 5ea30665-118b-40a6-bb61-f0870d46467f
     imagePrefab: {fileID: 3796783204015073837, guid: 7a72fa0c0db008144a71e3c525870edd,
       type: 3}
   - imageGuid: 423e48a5-73ac-44c7-9c62-d5c9590803a7
     imagePrefab: {fileID: 3475766866932614503, guid: ee2364ff189124547b27d49190f162ef,
-      type: 3}
-  - imageGuid: 5895a915-d3ee-4b7d-b8a6-c9fd73ad7a5b
-    imagePrefab: {fileID: 3796783204015073837, guid: 7a72fa0c0db008144a71e3c525870edd,
       type: 3}
   m_ImageLibrary: {fileID: 11400000, guid: c86e375d7e7430442a1104e88fa21f21, type: 2}
 --- !u!114 &1099623061
