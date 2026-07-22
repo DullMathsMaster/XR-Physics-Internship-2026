@@ -1061,6 +1061,27 @@ MonoBehaviour:
   stringLength: 1
   ballRadius: 0.08
   isCruiseControl: 0
+  toggleCruiseControlKey: 99
+  toggleCruiseAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Toggle Cruise
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: ce68168f-ed55-43c5-a0d4-c842691fe361
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 37bda914-9423-4d04-a8c0-95dafb658772
+        m_Path: <XRController>{RightHand}/primaryButton
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Toggle Cruise
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
   arrowPrefab: {fileID: 4981013175232635622, guid: 4040550e000d4774286c6a637e028a81, type: 3}
   forceScale: 0.05
   gravityColor: {r: 1, g: 0, b: 0, a: 1}
@@ -1071,6 +1092,7 @@ MonoBehaviour:
   centripetalGraph: {fileID: 65284395}
   maxGraphPoints: 100
   graphScaleY: 0.05
+  graphSmoothing: 0.15
 --- !u!1 &1600812346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,7 +1502,7 @@ MonoBehaviour:
   ballTransform: {fileID: 1552178061}
   segmentCount: 15
   ropeLength: 1
-  constraintIterations: 10
+  constraintIterations: 15
   gravity: {x: 0, y: -9.81, z: 0}
   drag: 0.98
   enableFloorCollision: 1
