@@ -29,7 +29,7 @@ public class VerletRopeVisualizer : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = segmentCount;
-        maxSegmentLength = ropeLength / (segmentCount - 1);
+        maxSegmentLength = ropeLength / Mathf.Max(1, segmentCount - 1);
 
         nodes = new RopeNode[segmentCount];
         Vector3 startPos = transform.position;
@@ -59,12 +59,13 @@ public class VerletRopeVisualizer : MonoBehaviour
     private void Simulate()
     {
         float subTimeStep = Time.fixedDeltaTime;
+        Vector3 gravityStep = gravity * (subTimeStep * subTimeStep);
 
         for (int i = 0; i < segmentCount; i++)
         {
             Vector3 velocity = (nodes[i].currentPosition - nodes[i].previousPosition) * drag;
             nodes[i].previousPosition = nodes[i].currentPosition;
-            nodes[i].currentPosition += velocity + gravity * (subTimeStep * subTimeStep);
+            nodes[i].currentPosition += velocity + gravityStep;
         }
     }
 
@@ -126,36 +127,55 @@ public class VerletRopeVisualizer : MonoBehaviour
 
             HandleFloorCollision();
         }
-
-        // Tautness constraint: If distance between start and end reaches ropeLength, align inner nodes in a straight line
-        Vector3 totalVec = ballTransform.position - transform.position;
-        float totalDist = totalVec.magnitude;
-
-        if (totalDist >= ropeLength - 0.02f)
-        {
-            Vector3 straightDir = totalVec.normalized;
-            for (int i = 1; i < segmentCount - 1; i++)
-            {
-                float t = (float)i / (segmentCount - 1);
-                nodes[i].currentPosition = transform.position + straightDir * (t * totalDist);
-            }
-        }
     }
 
     private void DrawRope()
     {
+        if (lineRenderer == null || ballTransform == null || nodes == null || nodes.Length == 0) return;
+
+        Vector3 startPos = transform.position;
+        Vector3 endPos = ballTransform.position;
+        Vector3 totalVec = endPos - startPos;
+        float totalDist = totalVec.magnitude;
+
+        // Check if rope is pulled taut or ball is kinematic (e.g. Cruise Control)
+        Rigidbody ballRb = ballTransform.GetComponent<Rigidbody>();
+        bool isKinematic = ballRb != null && ballRb.isKinematic;
+        bool isTaut = totalDist >= (ropeLength - 0.03f) || isKinematic;
+
         Vector3[] positions = new Vector3[segmentCount];
-        
-        if (nodes != null && nodes.Length > 0)
+
+        if (isTaut)
         {
-            nodes[0].currentPosition = transform.position;
-            if (ballTransform != null) nodes[segmentCount - 1].currentPosition = ballTransform.position;
+            // Direct per-frame linear interpolation when taut guarantees zero visual jitter
+            Vector3 straightDir = totalDist > 0.0001f ? (totalVec / totalDist) : Vector3.down;
+            float lineSpan = Mathf.Min(totalDist, ropeLength);
+
+            for (int i = 0; i < segmentCount; i++)
+            {
+                float t = (float)i / (segmentCount - 1);
+                Vector3 targetPos = startPos + straightDir * (t * lineSpan);
+                
+                positions[i] = targetPos;
+
+                // Sync internal physics nodes so they don't explode when returning to slack
+                nodes[i].currentPosition = targetPos;
+                nodes[i].previousPosition = targetPos;
+            }
+        }
+        else
+        {
+            // Standard slack rope simulation display
+            nodes[0].currentPosition = startPos;
+            nodes[segmentCount - 1].currentPosition = endPos;
 
             for (int i = 0; i < segmentCount; i++)
             {
                 positions[i] = nodes[i].currentPosition;
             }
-            lineRenderer.SetPositions(positions);
         }
+
+        lineRenderer.positionCount = segmentCount;
+        lineRenderer.SetPositions(positions);
     }
 }

@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class HandleLock : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField] private ForceVisualiser forceVisualiser;
 
-    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
+    private XRGrabInteractable grabInteractable;
     private Rigidbody rb;
 
     private Vector3 lockedPosition;
@@ -14,7 +16,7 @@ public class HandleLock : MonoBehaviour
 
     private void Start()
     {
-        grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+        grabInteractable = GetComponent<XRGrabInteractable>();
         rb = GetComponent<Rigidbody>();
 
         if (forceVisualiser == null)
@@ -63,8 +65,8 @@ public class HandleLock : MonoBehaviour
             if (grabInteractable.isSelected)
             {
                 grabInteractable.interactionManager.SelectExit(
-                    (UnityEngine.XR.Interaction.Toolkit.Interactors.IXRSelectInteractor)grabInteractable.firstInteractorSelecting,
-                    (UnityEngine.XR.Interaction.Toolkit.Interactables.IXRSelectInteractable)grabInteractable
+                    (IXRSelectInteractor)grabInteractable.firstInteractorSelecting,
+                    (IXRSelectInteractable)grabInteractable
                 );
             }
             grabInteractable.enabled = false;
