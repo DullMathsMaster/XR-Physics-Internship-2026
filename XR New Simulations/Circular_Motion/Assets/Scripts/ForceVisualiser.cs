@@ -63,20 +63,25 @@ public class ForceVisualiser : MonoBehaviour
 
     private float targetSpeed = 0f;
     
-    // Immutable planar basis for Cruise Control
-    private Vector3 planeNormal = Vector3.right;
-    private Vector3 planeU = Vector3.forward;
-    private Vector3 planeV = Vector3.up;
-    private float angularVelocity = 0f;
-    private float cruiseStartTime = 0f;
+    // Rotation & Orbit Center parameters (Supports arbitrary tilt/angle)
+    private Vector3 circleCenter;
+    private Vector3 horizontalRadiusVec;
+    private Vector3 rotationAxis = Vector3.up;
+    private float degreesPerSecond = 0f;
+    private float currentAngle = 0f;
+    private float currentRadius = 1.0f;
     private float cruiseMaxScale = 1.0f;
 
-    // Smoothed force values
+    // Smoothed force values for readout and graphs
     private float smoothedTension = 0f;
     private float smoothedCentripetal = 0f;
     private float smoothedNetForce = 0f;
 
-    // History for dynamic graph scaling
+    // Displacement tracking to preserve velocity during VR grabs
+    private Vector3 lastFramePos;
+    private Vector3 calculatedVelocity;
+
+    // Graph history
     private List<float> tensionHistory = new List<float>();
     private List<float> centripetalHistory = new List<float>();
 
@@ -105,7 +110,6 @@ public class ForceVisualiser : MonoBehaviour
 
     private void ForceReleaseVRHand()
     {
-        // Force drop across standard VR interactables via reflection to avoid dependency issues
         var interactable = GetComponent("XRGrabInteractable");
         if (interactable != null)
         {
@@ -127,7 +131,6 @@ public class ForceVisualiser : MonoBehaviour
             }
         }
 
-        // Toggle components as fallback
         Collider col = GetComponent<Collider>();
         if (col != null)
         {
@@ -144,42 +147,11 @@ public class ForceVisualiser : MonoBehaviour
         {
             ForceReleaseVRHand();
 
-            Vector3 relPos = transform.position - pivot.position;
-            float dist = relPos.magnitude;
-            if (dist <= 0.0001f) return;
+            SetupContinuousTrajectory();
 
-            Vector3 currentVel = rb.linearVelocity;
-            
-            if (currentVel.magnitude < 0.2f)
-            {
-                currentVel = Vector3.Cross(relPos, Vector3.up).normalized * 2.0f;
-                if (currentVel.sqrMagnitude < 0.01f)
-                {
-                    currentVel = Vector3.Cross(relPos, Vector3.right).normalized * 2.0f;
-                }
-            }
-
-            targetSpeed = Mathf.Max(currentVel.magnitude, 1.5f);
-            angularVelocity = targetSpeed / stringLength;
-
-            Vector3 rawNormal = Vector3.Cross(relPos, currentVel);
-            if (rawNormal.sqrMagnitude < 0.001f)
-            {
-                rawNormal = Vector3.Cross(relPos, Vector3.forward);
-                if (rawNormal.sqrMagnitude < 0.001f) rawNormal = Vector3.Cross(relPos, Vector3.right);
-            }
-            planeNormal = rawNormal.normalized;
-
-            planeU = Vector3.ProjectOnPlane(relPos, planeNormal).normalized;
-            planeV = Vector3.Cross(planeNormal, planeU).normalized;
-
-            float dirSign = Vector3.Dot(currentVel, planeV) >= 0f ? 1f : -1f;
-            angularVelocity *= dirSign;
-
-            cruiseStartTime = Time.time;
             rb.isKinematic = true;
 
-            float fc = (rb.mass * targetSpeed * targetSpeed) / stringLength;
+            float fc = (rb.mass * targetSpeed * targetSpeed) / Mathf.Max(0.0001f, currentRadius);
             float fg = Physics.gravity.magnitude * rb.mass;
             cruiseMaxScale = Mathf.Max(fc + fg, 1.0f);
             
@@ -192,9 +164,72 @@ public class ForceVisualiser : MonoBehaviour
         }
     }
 
+    private void SetupContinuousTrajectory()
+    {
+        Vector3 ballPos = transform.position;
+        Vector3 stringVec = pivot.position - ballPos;
+        float dist = stringVec.magnitude;
+        if (dist <= 0.0001f) return;
+
+        Vector3 stringDir = stringVec / dist;
+
+        // 1. Recover active velocity (handling VR hand drop)
+        Vector3 activeVel = rb.linearVelocity.sqrMagnitude > 0.01f ? rb.linearVelocity : calculatedVelocity;
+        Vector3 tangentVel = activeVel - Vector3.Project(activeVel, stringDir);
+
+        if (tangentVel.magnitude < 0.1f)
+        {
+            tangentVel = Vector3.Cross(stringDir, Vector3.up).normalized * 2.0f;
+            if (tangentVel.sqrMagnitude < 0.01f)
+                tangentVel = Vector3.Cross(stringDir, Vector3.right).normalized * 2.0f;
+        }
+
+        targetSpeed = Mathf.Max(tangentVel.magnitude, 1.0f);
+
+        // 2. Calculate true physics Net Force (Tension + Gravity)
+        Vector3 gravityForce = Physics.gravity * rb.mass;
+        float centripetalMag = (rb.mass * targetSpeed * targetSpeed) / Mathf.Max(0.0001f, dist);
+        float gravRadialComp = -Vector3.Dot(gravityForce, stringDir);
+        float tensionMag = Mathf.Max(0f, gravRadialComp + centripetalMag);
+        
+        Vector3 tensionForce = stringDir * tensionMag;
+        Vector3 netForce = tensionForce + gravityForce; // Pure centripetal force vector
+
+        // 3. If net force is zero (e.g. weightless/freefall), fall back to perpendicular velocity plane
+        if (netForce.sqrMagnitude < 0.001f)
+        {
+            rotationAxis = Vector3.Cross(stringVec, tangentVel).normalized;
+            circleCenter = pivot.position;
+        }
+        else
+        {
+            // Net force vector points DIRECTLY toward the true circle center
+            Vector3 centripetalDir = netForce.normalized;
+
+            // Rotation axis is perpendicular to velocity and net centripetal force
+            rotationAxis = Vector3.Cross(tangentVel.normalized, centripetalDir).normalized;
+
+            // Radius derived from speed and centripetal acceleration magnitude
+            currentRadius = (rb.mass * targetSpeed * targetSpeed) / netForce.magnitude;
+
+            // True center of motion in 3D space
+            circleCenter = ballPos + (centripetalDir * currentRadius);
+        }
+
+        // 4. Radius vector pointing from center to ball
+        horizontalRadiusVec = ballPos - circleCenter;
+
+        // 5. Angular speed (deg/sec)
+        float radiansPerSecond = targetSpeed / Mathf.Max(0.001f, currentRadius);
+        degreesPerSecond = radiansPerSecond * Mathf.Rad2Deg;
+
+        currentAngle = 0f;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        lastFramePos = transform.position;
 
         if (pivot != null && stringLength <= 0f)
         {
@@ -243,6 +278,12 @@ public class ForceVisualiser : MonoBehaviour
 
     private void Update()
     {
+        if (Time.deltaTime > 0f)
+        {
+            calculatedVelocity = (transform.position - lastFramePos) / Time.deltaTime;
+            lastFramePos = transform.position;
+        }
+
         if (Input.GetKeyDown(toggleCruiseControlKey))
         {
             IsCruiseControl = !IsCruiseControl;
@@ -253,18 +294,17 @@ public class ForceVisualiser : MonoBehaviour
     {
         if (pivot == null || rb == null || arrowPrefab == null) return;
 
-        // Position lock executed in LateUpdate overrides VR hand pose updates
         if (isCruiseControl)
         {
-            float elapsedTime = Time.time - cruiseStartTime;
-            float angle = angularVelocity * elapsedTime;
+            currentAngle += degreesPerSecond * Time.deltaTime;
 
-            Vector3 posOnCircle = pivot.position + (planeU * Mathf.Cos(angle) + planeV * Mathf.Sin(angle)) * stringLength;
+            Vector3 rotatedRadiusVec = Quaternion.AngleAxis(currentAngle, rotationAxis) * horizontalRadiusVec;
+            Vector3 posOnCircle = circleCenter + rotatedRadiusVec;
+
             transform.position = posOnCircle;
             rb.position = posOnCircle;
         }
 
-        // Draw connecting string cleanly without 1-frame offset
         if (stringLineRenderer != null)
         {
             stringLineRenderer.enabled = true;
@@ -283,21 +323,24 @@ public class ForceVisualiser : MonoBehaviour
 
         float speed = isCruiseControl ? targetSpeed : Vector3.ProjectOnPlane(rb.linearVelocity, stringDir).magnitude;
 
-        // Centripetal force F_c = (m * v^2) / r
-        float centripetalMag = (rb.mass * speed * speed) / stringLength;
+        float centripetalMag = (rb.mass * speed * speed) / Mathf.Max(0.0001f, currentRadius);
         float gravRadialComp = -Vector3.Dot(gravityForce, stringDir);
 
         float tensionMag = Mathf.Max(0f, gravRadialComp + centripetalMag);
         Vector3 tensionForce = stringDir * tensionMag;
 
-        Vector3 netForce = isCruiseControl ? (stringDir * centripetalMag) : (tensionForce + gravityForce);
+        // FIXED: Point centripetal force arrow toward orbit center during Cruise Control
+        Vector3 centerDir = (circleCenter - ballPos).normalized;
+        Vector3 netForce = isCruiseControl ? (centerDir * centripetalMag) : (tensionForce + gravityForce);
 
         smoothedTension = Mathf.Lerp(smoothedTension, tensionMag, graphSmoothing);
         smoothedCentripetal = Mathf.Lerp(smoothedCentripetal, centripetalMag, graphSmoothing);
         smoothedNetForce = Mathf.Lerp(smoothedNetForce, netForce.magnitude, graphSmoothing);
 
         Vector3 displayTensionForce = stringDir * smoothedTension;
-        Vector3 displayNetForce = netForce.sqrMagnitude > 0.0001f ? netForce.normalized * smoothedNetForce : Vector3.zero;
+        Vector3 displayNetForce = isCruiseControl 
+            ? centerDir * smoothedCentripetal 
+            : (netForce.sqrMagnitude > 0.0001f ? netForce.normalized * smoothedNetForce : Vector3.zero);
 
         RenderArrow(gravityArrow, ballPos, gravityForce, gravityColor);
         RenderArrow(tensionArrow, ballPos, displayTensionForce, tensionColor);
@@ -330,8 +373,8 @@ public class ForceVisualiser : MonoBehaviour
         {
             axisVisualizer.enabled = true;
             axisVisualizer.positionCount = 2;
-            axisVisualizer.SetPosition(0, pivot.position - planeNormal * axisLength);
-            axisVisualizer.SetPosition(1, pivot.position + planeNormal * axisLength);
+            axisVisualizer.SetPosition(0, circleCenter - rotationAxis * axisLength);
+            axisVisualizer.SetPosition(1, circleCenter + rotationAxis * axisLength);
         }
 
         if (planeVisualizer != null)
@@ -342,9 +385,9 @@ public class ForceVisualiser : MonoBehaviour
             Vector3[] points = new Vector3[planeSegments + 1];
             for (int i = 0; i <= planeSegments; i++)
             {
-                float angle = (i / (float)planeSegments) * Mathf.PI * 2f;
-                Vector3 offset = (planeU * Mathf.Cos(angle) + planeV * Mathf.Sin(angle)) * stringLength;
-                points[i] = pivot.position + offset;
+                float angle = (i / (float)planeSegments) * 360f;
+                Vector3 ringPoint = circleCenter + (Quaternion.AngleAxis(angle, rotationAxis) * horizontalRadiusVec);
+                points[i] = ringPoint;
             }
             planeVisualizer.SetPositions(points);
         }
